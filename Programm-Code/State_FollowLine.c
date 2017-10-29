@@ -22,7 +22,7 @@
 
 // Some speed values for different movements:
 #define FOLLOW_LINE_SPEED  40
-#define FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC FOLLOW_LINE_SPEED / 2
+#define FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC FOLLOW_LINE_SPEED / 3
 
 // States for the Avoid FSM:
 #define FOLLOW_LINE_DETECTED 		1
@@ -31,6 +31,61 @@ struct behaviour_command_t followLine = {0, 0, FWD, false, false, 0, IDLE};
 
 uint8_t lastFollowLineArrayValue = 0;
 uint8_t currentFollowLineArrayValue = 0;
+
+// The behaviour command data type:
+enum
+{
+	nichtsGefunden = 0,
+	Linie_1_gefunden = 1,
+	Linie_1_und_Luecke_gefunden = 2,
+	Linie_2_gefunden = 3
+};
+
+int searchForTwoLines( int *GefundenePosition )
+{
+	int state = nichtsGefunden;
+	int modulo = 0;
+	int i, currentValue = currentFollowLineArrayValue;
+	
+	for(i = 0; i < 8; i++)
+	{
+		modulo = currentValue % 2;
+		currentValue /= 2;
+		//writeString_P("i: ");
+		//writeInteger(*GefundenePosition, DEC);
+		//writeString_P(" val: ");
+		//writeInteger(currentValue, DEC);
+		//writeString_P("\n");
+		
+		switch(state)
+		{
+		default:
+		case nichtsGefunden:
+			if( modulo == true )
+				state = Linie_1_gefunden;
+			break;
+			
+		case Linie_1_gefunden:
+			if( modulo == false )
+			{
+				state = Linie_1_und_Luecke_gefunden;
+				*GefundenePosition = i;
+			}
+			break;
+			
+		case Linie_1_und_Luecke_gefunden:
+			if( modulo == true )
+				state = Linie_2_gefunden;
+			break;
+			
+		case Linie_2_gefunden:
+			return Linie_2_gefunden;
+			break;
+		}
+	}
+	
+	return state;
+}
 
 /**
  * If the line follower array detects a line the following code has to evaluate
@@ -41,19 +96,21 @@ void behaviour_followLine(void)
 {
 	if(currentFollowLineArrayValue != 0) // Does a line have been found?
 	{
-		if( followLine.state != FOLLOW_LINE_DETECTED)
-			writeString_P("Line found\n"); 
+		//if( followLine.state != FOLLOW_LINE_DETECTED)
+		//	writeString_P("Line found\n"); 
 		followLine.state = FOLLOW_LINE_DETECTED;
 	}
 	else
 	{
-		if( followLine.state != FOLLOW_LINE_DETECTED)
-			writeString_P("Line lost\n"); 
+		//if( followLine.state != FOLLOW_LINE_DETECTED)
+		//	writeString_P("Line lost\n"); 
 		followLine.state = IDLE;
 	}
 		
 	switch(followLine.state)
 	{
+		int stateLines = nichtsGefunden;
+		int mitteZwischenDenLinien = -1;
 		case IDLE: 
 		// Do nothing
 			;
@@ -65,43 +122,58 @@ void behaviour_followLine(void)
 			followLine.speed_left = FOLLOW_LINE_SPEED;
 			followLine.speed_right = FOLLOW_LINE_SPEED;
 			
+			stateLines = searchForTwoLines( &mitteZwischenDenLinien);
 			
-			if(   currentFollowLineArrayValue & 0b00000001    // Most left line sensor
-			   || currentFollowLineArrayValue & 0b00000010	  // Second most left line sensor
-			   || currentFollowLineArrayValue & 0b00000100 )  // Third most left line sensor
+			if( stateLines == Linie_2_gefunden )
 			{
-				if( currentFollowLineArrayValue & 0b00000001) // Hat der äußerste angesprochen?
-				{
-					writeString_P("Drive left sharp arc\n");
-					followLine.dir = LEFT;
-				}
-				else
-				{
-					writeString_P("Drive left arc\n");
-					followLine.speed_left  -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
-					followLine.speed_right += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
-				}
-				
-			}
-			else if(   currentFollowLineArrayValue & 0b10000000		// Most right line sensor
-			        || currentFollowLineArrayValue & 0b01000000     // Second most right line sensor
-					|| currentFollowLineArrayValue & 0b00100000)	// Third most right line sensor
-			{
-				if( currentFollowLineArrayValue & 0b10000000) // Hat der äußerste angesprochen?
-				{
-					writeString_P("Drive right sharp arc\n");
-					followLine.dir = RIGHT;
-				}
-				else
-				{
-					writeString_P("Drive right arc\n"); 
-					followLine.speed_left  += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
-					followLine.speed_right -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
-				}
+				writeString_P("Doppellinie gefunden: pos:");
+				writeInteger(mitteZwischenDenLinien, DEC);
+				writeString_P(" : ");
+				writeInteger(currentFollowLineArrayValue, DEC);
+				writeString_P("\n");
 			}
 			else
 			{
-				writeString_P("Drive straight forward\n"); 
+				writeString_P("Doppellinie NICHT gefunden: ");
+				writeInteger(stateLines, DEC);
+				writeString_P(" : ");
+				writeInteger(currentFollowLineArrayValue, DEC);
+				writeString_P("\n");
+				return;
+			}
+			
+			switch( mitteZwischenDenLinien )
+			{
+			case 1:
+				followLine.dir = LEFT;
+				break;
+			
+			case 2:
+				followLine.speed_left  = 0;
+				break;
+			
+			case 3:
+				followLine.speed_left  -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
+				followLine.speed_right += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
+				break;
+			
+			case 4:
+				followLine.speed_left  += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
+				followLine.speed_right -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
+				break;
+			
+			case 5:
+				followLine.speed_right = 0;
+				break;
+			
+			case 6:
+				followLine.dir = RIGHT;
+				break;
+			
+			case 0:
+			case 7:
+			default:
+				break;
 			}
 		break;
 	}
