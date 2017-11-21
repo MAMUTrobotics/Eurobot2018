@@ -1,3 +1,5 @@
+#ifndef STATE_AVOID_H
+#define STATE_AVOID_H
 /* 
  * ****************************************************************************
  * State_Avoid
@@ -16,11 +18,11 @@
 // Avoid Behaviour:
 
 // Some speed values for different movements:
-#define AVOID_SPEED_L_ARC_LEFT  25
-#define AVOID_SPEED_L_ARC_RIGHT 40
-#define AVOID_SPEED_R_ARC_LEFT  40
-#define AVOID_SPEED_R_ARC_RIGHT 25
-#define AVOID_SPEED_ROTATE 	30
+#define AVOID_SPEED_L_ARC_LEFT  ROBOT_DEFAULT_SPEED / 2
+#define AVOID_SPEED_L_ARC_RIGHT ROBOT_DEFAULT_SPEED
+#define AVOID_SPEED_R_ARC_LEFT  ROBOT_DEFAULT_SPEED
+#define AVOID_SPEED_R_ARC_RIGHT ROBOT_DEFAULT_SPEED / 2
+#define AVOID_SPEED_ROTATE 	ROBOT_DEFAULT_SPEED / 2
 
 // States for the Avoid FSM:
 #define AVOID_OBSTACLE_RIGHT 		1
@@ -131,3 +133,4 @@ void acsStateChangedNew(void)
 	stopStopwatch5(); 	// Reinitialisierung der Anfahrt-GeschwindigkeitsRampe
 }
 
+#endif

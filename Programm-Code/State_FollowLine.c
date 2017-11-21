@@ -1,3 +1,5 @@
+#ifndef STATE_FOLLOWLINE_H
+#define STATE_FOLLOWLINE_H
 /* 
  * ****************************************************************************
  * State_FollowLine
@@ -18,18 +20,17 @@
 
 #define LINE_FOLLOWER_ARRAY_ADR  124 	// I2C-Adress of the line follower array
 #define REG_DATA_B	0x10				//	RegDataB Data register _ I/O[15_8] (Bank B) 1111 1111*
-#define LINE_FOLLOWER_READ_CYCLE_TIME_MS 100	// Time interval in which the line follower array will be read
+#define LINE_FOLLOWER_READ_CYCLE_TIME_MS DEFAULT_EVALUATION_CYCLE_TIME_MS	// Time interval in which the line follower array will be read
 
 // Some speed values for different movements:
-#define FOLLOW_LINE_SPEED  40
+#define FOLLOW_LINE_SPEED  ROBOT_DEFAULT_SPEED
 #define FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC FOLLOW_LINE_SPEED / 3
 
-// States for the Avoid FSM:
+// States for the Line Detection:
 #define FOLLOW_LINE_DETECTED 		1
 
 struct behaviour_command_t followLine = {0, 0, FWD, false, false, 0, IDLE};
 
-uint8_t lastFollowLineArrayValue = 0;
 uint8_t currentFollowLineArrayValue = 0;
 
 // The behaviour command data type:
@@ -153,11 +154,13 @@ void behaviour_followLine(void)
 				break;
 			
 			case 3:
+				setStopwatch1(0);	// Wird gestartet, weil innerhalb einer bestimmten Zeit Kreuzungen ausgewertet werden
 				followLine.speed_left  -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				followLine.speed_right += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				break;
 			
 			case 4:
+				setStopwatch1(0);	// Wird gestartet, weil innerhalb einer bestimmten Zeit Kreuzungen ausgewertet werden
 				followLine.speed_left  += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				followLine.speed_right -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				break;
@@ -194,13 +197,22 @@ void task_LineFollower(void)
 		
 		if(currentFollowLineArrayValue != lastFollowLineArrayValue)
 		{
-			writeString_P("LinienWert: "); writeInteger(lastFollowLineArrayValue, DEC);
-			writeString_P(" -> "); writeInteger(currentFollowLineArrayValue, DEC);
+			writeString_P("LinienWert: ");
+			writeInteger(lastFollowLineArrayValue, DEC);
+			writeString_P(" -> ");
+			writeInteger(currentFollowLineArrayValue, DEC);
 			writeChar('\n');
 		}
 		
 		lastFollowLineArrayValue = currentFollowLineArrayValue;
 		
+		
+		// Um CarryOutMission zu aktivieren, muss die folgdende Codezeile einkommentiert werden:
+		
+		//task_EvaluateMission();	// Hier wird ermittelt, ob zur Missionserfüllung relevante Bewegungen durchgeführt werden müssen
+		
 		setStopwatch2(0);
 	}
 }
+
+#endif

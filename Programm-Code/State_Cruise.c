@@ -1,3 +1,5 @@
+#ifndef STATE_CRUISE_H
+#define STATE_CRUISE_H
 /* 
  * ****************************************************************************
  * State_Cruise
@@ -15,7 +17,7 @@
 /*****************************************************************************/
 // Cruise Behaviour:
 
-#define CRUISE_SPEED_FWD    50// 100 Default speed when no obstacles are detected!
+#define CRUISE_SPEED_FWD    ROBOT_DEFAULT_SPEED  // Default speed when no obstacles are detected!
 uint8_t speed = CRUISE_SPEED_FWD;
 
 #define MOVE_FORWARDS 1
@@ -72,3 +74,5 @@ void behaviour_cruise(void)
 	//	writeString_P("\n"); 
 	//}
 }
+
+#endif

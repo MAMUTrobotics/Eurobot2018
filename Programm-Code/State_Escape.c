@@ -1,3 +1,5 @@
+#ifndef STATE_ESCAPE_H
+#define STATE_ESCAPE_H
 /* 
  * ****************************************************************************
  * State_Escape
@@ -15,8 +17,8 @@
 /****************************************************************************/
 // Escape Behaviour:
 
-#define ESCAPE_SPEED_BWD    40 // 100
-#define ESCAPE_SPEED_ROTATE 30  // 60
+#define ESCAPE_SPEED_BWD    ROBOT_DEFAULT_SPEED
+#define ESCAPE_SPEED_ROTATE ROBOT_DEFAULT_SPEED / 2
 
 
 #define ESCAPE_FRONT		1
@@ -153,3 +155,5 @@ void bumpersStateChangedNew(void)
 	}
 	stopStopwatch5(); 	// Reinitialisierung der Anfahrt-GeschwindigkeitsRampe
 }
+
+#endif
