@@ -1,0 +1,2 @@
+In EuroBot.c befindet sich die main()-Funktion und der Behaviour-Controller. Es dient somit als übersichtlicher Ausgangspunkt um das Programm zu analysieren.
+In globalIncludes.h befinden sich wichtige Konstanten (z.B. Standard-Fahrgeschwindigkeit) und Datentypen die in unterschiedlichen Dateien verwendet werden.
