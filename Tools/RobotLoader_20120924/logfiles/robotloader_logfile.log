@@ -1,0 +1,3240 @@
+RobotLoader log file
+
+SystemLogger started at: Tue Nov 28 18:45:55 CET 2017 (1511891155798)
+JVM System Information:
+
+java.runtime.name	=	Java(TM) SE Runtime Environment
+sun.boot.library.path	=	C:\Program Files (x86)\Java\jre1.8.0_141\bin
+java.vm.version	=	25.141-b15
+java.vm.vendor	=	Oracle Corporation
+java.vendor.url	=	http://java.oracle.com/
+path.separator	=	;
+java.vm.name	=	Java HotSpot(TM) Client VM
+file.encoding.pkg	=	sun.io
+user.country	=	DE
+user.script	=	
+sun.java.launcher	=	SUN_STANDARD
+sun.os.patch.level	=	Service Pack 1
+java.vm.specification.name	=	Java Virtual Machine Specification
+user.dir	=	C:\Users\robo.stu\Documents\Github\Eurobot2018\Tools\RobotLoader_20120924
+java.runtime.version	=	1.8.0_141-b15
+java.awt.graphicsenv	=	sun.awt.Win32GraphicsEnvironment
+java.endorsed.dirs	=	C:\Program Files (x86)\Java\jre1.8.0_141\lib\endorsed
+os.arch	=	x86
+java.io.tmpdir	=	C:\Users\robo.stu\AppData\Local\Temp\
+line.separator	=	
+
+java.vm.specification.vendor	=	Oracle Corporation
+user.variant	=	
+os.name	=	Windows 7
+sun.jnu.encoding	=	Cp1252
+java.library.path	=	.;.\lib
+sun.awt.enableExtraMouseButtons	=	true
+java.specification.name	=	Java Platform API Specification
+java.class.version	=	52.0
+sun.management.compiler	=	HotSpot Client Compiler
+os.version	=	6.1
+user.home	=	C:\Users\robo.stu
+user.timezone	=	Europe/Berlin
+java.awt.printerjob	=	sun.awt.windows.WPrinterJob
+file.encoding	=	Cp1252
+java.specification.version	=	1.8
+java.class.path	=	RobotLoader_lib.jar;lib\jd2xx.jar;lib\RXTXcomm.jar;lib\comm.jar
+user.name	=	robo.stu
+java.vm.specification.version	=	1.8
+sun.java.command	=	de.dsh.rp6loader.Init
+java.home	=	C:\Program Files (x86)\Java\jre1.8.0_141
+sun.arch.data.model	=	32
+user.language	=	de
+java.specification.vendor	=	Oracle Corporation
+awt.toolkit	=	sun.awt.windows.WToolkit
+java.vm.info	=	mixed mode, sharing
+java.version	=	1.8.0_141
+java.ext.dirs	=	C:\Program Files (x86)\Java\jre1.8.0_141\lib\ext;C:\Windows\Sun\Java\lib\ext
+sun.boot.class.path	=	C:\Program Files (x86)\Java\jre1.8.0_141\lib\resources.jar;C:\Program Files (x86)\Java\jre1.8.0_141\lib\rt.jar;C:\Program Files (x86)\Java\jre1.8.0_141\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jre1.8.0_141\lib\jsse.jar;C:\Program Files (x86)\Java\jre1.8.0_141\lib\jce.jar;C:\Program Files (x86)\Java\jre1.8.0_141\lib\charsets.jar;C:\Program Files (x86)\Java\jre1.8.0_141\lib\jfr.jar;C:\Program Files (x86)\Java\jre1.8.0_141\classes
+java.vendor	=	Oracle Corporation
+file.separator	=	\
+java.vendor.url.bug	=	http://bugreport.sun.com/bugreport/
+sun.io.unicode.encoding	=	UnicodeLittle
+sun.cpu.endian	=	little
+sun.desktop	=	windows
+sun.cpu.isalist	=	pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86
+
+
+JVM Memory Information:
+Free: 11847888 (11570 Kb)
+Max: 259522560 (253440 Kb)
+Total: 16252928 (15872 Kb)
+
+
+Initializing...
+RobotLoader Version: 2.4a
+Last build: 24.09.2012
+Loading Configuration...
+Done!
+Global->loadLocalizedText
+Loading Board Library...
+Done!
+OS:WIN
+Initializing native communication library: JD2XX
+--> USB0 |  | 
+--> USB0 |  | 
+UDP listener on 55555 active!
+Network Error 1
+java.net.BindException: Address already in use: Cannot bind
+	at java.net.DualStackPlainDatagramSocketImpl.socketBind(Native Method)
+	at java.net.DualStackPlainDatagramSocketImpl.bind0(Unknown Source)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(Unknown Source)
+	at java.net.DatagramSocket.bind(Unknown Source)
+	at java.net.DatagramSocket.<init>(Unknown Source)
+	at java.net.DatagramSocket.<init>(Unknown Source)
+	at java.net.DatagramSocket.<init>(Unknown Source)
+	at cls.bG.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Add Connection Entry: 192.168.10.171:2000
+TERMINAL: RobotLoader Serial Terminal
+TERMINAL:  - type ".help" for command list!
+NETWORK TERMINAL: RobotLoader Network / WIFI Terminal
+NETWORK TERMINAL:  - type ".help" for command list!
+Loading File List...
+Done!
+Loading File List Network...
+Done!
+Loading WIFI Configuration...
+Done!
+Init.2 done.
+Global->Enabling log panel...
+RobotLoader is ready to go.
+Message (Tue Nov 28 18:46:07 CET 2017) : RP6Main.actionPerformed: REFRESH
+--> USB0 |  | 
+Message (Tue Nov 28 18:46:17 CET 2017) : RP6Main.actionPerformed: REFRESH
+--> USB0 | RP6 USB Interface | ARYIFU3Z
+Message (Tue Nov 28 18:46:19 CET 2017) : RP6Main.actionPerformed: CONNECT
+Trying to open port: USB0 | RP6 USB Interface | ARYIFU3Z
+--> USB0 | RP6 USB Interface | ARYIFU3Z
+Portlist: USB0 | RP6 USB Interface | ARYIFU3Z
+USB0 | RP6 USB Interface | ARYIFU3Z open @38400baud
+Device info:  --> Desc: RP6 USB Interface
+Device info:  --> ID: 67330049
+Set Comport...
+Baudrate is set to: 38400
+OK!
+Try to get ID...
+Data start...
+Bootloader active "[RP6BOOT]"
+Connected to target!
+Connected to target 2!
+Target ID received:
+RP6: Board ID 1, Firmware Version 1.4, Board Rev.: 5
+["RP6 Robot Base", 1, MEGA32, 0, 30720, true]
+Board Memory: 0 to 30720 
+Board with Battery Sensor --> Reading Battery voltage...
+Voltage read: 6.36V
+Battery Voltage is in acceptable range.
+
+Finished 0ms
+TERMINAL: 
+TERMINAL: 
+[READY]
+
+TERMINAL: 
+Message (Tue Nov 28 18:46:29 CET 2017) : RP6Main.actionPerformed: ADD_CAT
+Category ||| Add new Category: => EuroBot2017
+Message (Tue Nov 28 18:46:36 CET 2017) : RP6Main.actionPerformed: ADD_HEX
+Message (Tue Nov 28 18:46:52 CET 2017) : RP6Terminal.actionPerformed: SAVE_TERM
+Message (Tue Nov 28 18:47:16 CET 2017) : RP6Main.actionPerformed: UPLOAD
+PARSING: IHEX, File:C:\Users\robo.stu\Documents\Github\Eurobot2018\Programm-Code\EuroBot.hex
+PARSING DONE! CRC16 is 0xA98C
+Start ADR: 0  End ADR: 11612
+Size: 11612
+Set Comport...
+Baudrate is set to: 38400
+OK!
+Baudrate is set to: 38400
+Uploading new program to target device; Range: 0 - 2d5c
+Data start...
+Bootloader active "[RP6BOOT]"
+Connected to target!
+Connected to target 2!
+Target ID received:
+RP6: Board ID 1, Firmware Version 1.4, Board Rev.: 5
+["RP6 Robot Base", 1, MEGA32, 0, 30720, true]
+Board Memory: 0 to 30720 
+Board with Battery Sensor --> Reading Battery voltage...
+Voltage read: 6.35V
+Battery Voltage is in acceptable range.
+Setup High Speed...
+Speed ACK!
+Change baudrate of USB0 | RP6 USB Interface | ARYIFU3Z from 38400 to 500000 OK!
+Got Preamble...
+Got Speed change OK!
+Link test - Target ID received again:
+RP6: Board ID 1, Firmware Version 1.4, Board Rev.: 5
+Setup OK!
+Upload in progress...
+Write 256b @0 ; CRC16: 0x56D
+Write 256b @256 ; CRC16: 0x65C3
+Write 256b @512 ; CRC16: 0x44C6
+Write 256b @768 ; CRC16: 0x38CA
+TERMINAL: 
+Write 256b @1024 ; CRC16: 0xB7
+Write 256b @1280 ; CRC16: 0xFADF
+Write 256b @1536 ; CRC16: 0xA087
+Write 256b @1792 ; CRC16: 0x5E97
+Write 256b @2048 ; CRC16: 0xEDBF
+Write 256b @2304 ; CRC16: 0x63DB
+Write 256b @2560 ; CRC16: 0x4D9C
+Write 256b @2816 ; CRC16: 0x5115
+TERMINAL: 
+Write 256b @3072 ; CRC16: 0x6FE3
+Write 256b @3328 ; CRC16: 0x6FC4
+Write 256b @3584 ; CRC16: 0x56C8
+Write 256b @3840 ; CRC16: 0xB653
+Write 256b @4096 ; CRC16: 0xE150
+Write 256b @4352 ; CRC16: 0xDFEB
+Write 256b @4608 ; CRC16: 0x76E2
+Write 256b @4864 ; CRC16: 0x9080
+TERMINAL: 
+Write 256b @5120 ; CRC16: 0x921F
+Write 256b @5376 ; CRC16: 0x795C
+Write 256b @5632 ; CRC16: 0xFDBA
+Write 256b @5888 ; CRC16: 0xCEC0
+Write 256b @6144 ; CRC16: 0xB9C9
+Write 256b @6400 ; CRC16: 0x2789
+Write 256b @6656 ; CRC16: 0xC97E
+Write 256b @6912 ; CRC16: 0x32C6
+TERMINAL: 
+Write 256b @7168 ; CRC16: 0xA6E8
+Write 256b @7424 ; CRC16: 0x6F27
+Write 256b @7680 ; CRC16: 0xA765
+Write 256b @7936 ; CRC16: 0x398B
+Write 256b @8192 ; CRC16: 0x2884
+Write 256b @8448 ; CRC16: 0xA3A4
+Write 256b @8704 ; CRC16: 0xE170
+Write 256b @8960 ; CRC16: 0x9DE3
+TERMINAL: 
+Write 256b @9216 ; CRC16: 0xADCA
+Write 256b @9472 ; CRC16: 0x423D
+Write 256b @9728 ; CRC16: 0x6FFA
+Write 256b @9984 ; CRC16: 0xDF6E
+Write 256b @10240 ; CRC16: 0xD79E
+Write 256b @10496 ; CRC16: 0x8513
+Write 256b @10752 ; CRC16: 0x45B3
+Write 256b @11008 ; CRC16: 0x6767
+TERMINAL: 
+Write 256b @11264 ; CRC16: 0x8E45
+Write 256b @11520 ; CRC16: 0x3A6B
+Change baudrate of USB0 | RP6 USB Interface | ARYIFU3Z from 500000 to 38400 OK!
+Task completed successfully! Time needed: 1774ms
+
+Finished 1774ms
+TERMINAL: 
+[READY]
+
+TERMINAL: 
+TERMINAL: Initialisierungen beginnen
+EuroBotBot wird gestartet
+Start Cruise
+
+TERMINAL: LinienWert: 0 -> 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Start Cruise
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+
+TERMINAL: Doppellinie gefunden: pos:2 : 195
+Doppellinie gefunden: pos:2 : 195
+LinienWert: 195 -> 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+
+TERMINAL: Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+Doppellinie gefunden: pos:2 : 131
+
+TERMINAL: LinienWert: 131 -> 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+
+TERMINAL: Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+LinienWert: 129 -> 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+LinienWert: 1 -> 0
+
+TERMINAL: Start Cruise
+
+TERMINAL: 
+TERMINAL: LinienWert: 0 -> 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+
+TERMINAL: Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+Doppellinie gefunden: pos:1 : 193
+LinienWert: 193 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+LinienWert: 255 -> 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+
+TERMINAL: Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+Doppellinie NICHT gefunden: 2 : 1
+LinienWert: 1 -> 0
+
+TERMINAL: 
+TERMINAL: LinienWert: 0 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+LinienWert: 255 -> 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+
+TERMINAL: Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+
+TERMINAL: Doppellinie gefunden: pos:1 : 129
+LinienWert: 129 -> 0
+
+TERMINAL: 
+TERMINAL: LinienWert: 0 -> 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+
+TERMINAL: Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+Doppellinie gefunden: pos:1 : 129
+LinienWert: 129 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+LinienWert: 255 -> 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+LinienWert: 239 -> 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+LinienWert: 247 -> 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Start Cruise
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+LinienWert: 231 -> 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+LinienWert: 247 -> 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+LinienWert: 255 -> 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+LinienWert: 239 -> 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+
+TERMINAL: Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+Doppellinie gefunden: pos:3 : 247
+LinienWert: 247 -> 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+LinienWert: 231 -> 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+
+TERMINAL: Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+Doppellinie gefunden: pos:4 : 239
+LinienWert: 239 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+LinienWert: 255 -> 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+LinienWert: 231 -> 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+
+TERMINAL: Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+Doppellinie gefunden: pos:3 : 199
+LinienWert: 199 -> 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+
+TERMINAL: Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+Doppellinie gefunden: pos:3 : 231
+LinienWert: 231 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+LinienWert: 255 -> 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+Doppellinie NICHT gefunden: 1 : 240
+
+TERMINAL: LinienWert: 240 -> 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+Doppellinie NICHT gefunden: 1 : 192
+LinienWert: 192 -> 252
+Doppellinie NICHT gefunden: 1 : 252
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 252
+Doppellinie NICHT gefunden: 1 : 252
+LinienWert: 252 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1à
+[RP6BOOT]
+
+TERMINAL: 
+TERMINAL: 
+[READY]
+
+TERMINAL: 
+Message (Tue Nov 28 18:48:21 CET 2017) : RP6LoaderGUI.windowClosing: WINDOW_CLOSING,opposite=null,oldState=0,newState=0
+Saving File List...
+Done!
+Saving File List Network...
+Done!
+Saving configuration...
+Done!
+
+JVM Memory Information:
+Free: 11823912 (11546 Kb)
+Max: 259522560 (253440 Kb)
+Total: 25952256 (25344 Kb)
+
+Trying to close port...
+Port Closed!
+Program terminated! (1511891301358)
+TERMINAL: 
+[READY]
+
+TERMINAL: 
+Message (Tue Nov 28 18:45:16 CET 2017) : RP6Main.actionPerformed: START
+TERMINAL: Initialisierungen beginnen
+EuroBotBot wird gestartet
+Start Cruise
+
+TERMINAL: LinienWert: 0 -> 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Start Cruise
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT gefunden: 1 : 255
+
+TERMINAL: Doppellinie NICHT geþ
+[RP6BOOT]
+
+TERMINAL: 
+TERMINAL: 
+[READY]
+
+TERMINAL: 
+Message (Tue Nov 28 18:48:24 CET 2017) : RP6LoaderGUI.windowClosing: WINDOW_CLOSING,opposite=null,oldState=0,newState=0
+Saving File List...
+Done!
+Saving File List Network...
+Done!
+Saving configuration...
+Done!
+
+JVM Memory Information:
+Free: 3223992 (3148 Kb)
+Max: 259522560 (253440 Kb)
+Total: 16252928 (15872 Kb)
+
+Trying to close port...
+Port Closed!
+Program terminated! (1511891304133)
+Message (Tue Nov 28 18:50:07 CET 2017) : RP6LoaderGUI.windowClosing: WINDOW_CLOSING,opposite=null,oldState=0,newState=0
+Saving File List...
+Done!
+Saving File List Network...
+Done!
+Saving configuration...
+Done!
+
+JVM Memory Information:
+Free: 4428640 (4324 Kb)
+Max: 259522560 (253440 Kb)
+Total: 16252928 (15872 Kb)
+
+Trying to close port...
+Program terminated! (1511891407277)

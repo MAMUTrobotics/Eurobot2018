@@ -1,0 +1,3007 @@
+   1               		.file	"EuroBot.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	__I2CTWI_initMaster
+  18               	__I2CTWI_initMaster:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25               	/* #APP */
+  26               	 ;  42 "RP6Lib/RP6common/RP6I2CmasterTWI.c" 1
+  27 0000 F894      		cli
+  28               	 ;  0 "" 2
+  29               	.LM3:
+  30               	/* #NOAPP */
+  31 0002 80B9      		out 32-32,r24
+  32               	.LM4:
+  33 0004 11B8      		out 33-32,__zero_reg__
+  34               	.LM5:
+  35 0006 8FEF      		ldi r24,lo8(-1)
+  36               	.LVL1:
+  37 0008 83B9      		out 35-32,r24
+  38               	.LM6:
+  39 000a 84E0      		ldi r24,lo8(4)
+  40 000c 86BF      		out 86-32,r24
+  41               	.LM7:
+  42 000e 8091 0000 		lds r24,TWI_statusReg
+  43 0012 8160      		ori r24,lo8(1)
+  44 0014 8093 0000 		sts TWI_statusReg,r24
+  45               	.LM8:
+  46               	/* #APP */
+  47               	 ;  48 "RP6Lib/RP6common/RP6I2CmasterTWI.c" 1
+  48 0018 7894      		sei
+  49               	 ;  0 "" 2
+  50               	/* epilogue start */
+  51               	.LM9:
+  52               	/* #NOAPP */
+  53 001a 0895      		ret
+  54               	.LFE2:
+  56               	.global	I2CTWI_requestedDataReady_DUMMY
+  58               	I2CTWI_requestedDataReady_DUMMY:
+  59               	.LFB3:
+  60               	.LM10:
+  61               	.LVL2:
+  62               	/* prologue: function */
+  63               	/* frame size = 0 */
+  64               	/* epilogue start */
+  65               	.LM11:
+  66 001c 0895      		ret
+  67               	.LFE3:
+  69               	.global	I2CTWI_setRequestedDataReadyHandler
+  71               	I2CTWI_setRequestedDataReadyHandler:
+  72               	.LFB4:
+  73               	.LM12:
+  74               	.LVL3:
+  75               	/* prologue: function */
+  76               	/* frame size = 0 */
+  77               	.LM13:
+  78 001e 9093 0000 		sts (I2CTWI_requestedDataReadyHandler)+1,r25
+  79 0022 8093 0000 		sts I2CTWI_requestedDataReadyHandler,r24
+  80               	/* epilogue start */
+  81               	.LM14:
+  82 0026 0895      		ret
+  83               	.LFE4:
+  85               	.global	I2CTWI_transmissionError_DUMMY
+  87               	I2CTWI_transmissionError_DUMMY:
+  88               	.LFB5:
+  89               	.LM15:
+  90               	.LVL4:
+  91               	/* prologue: function */
+  92               	/* frame size = 0 */
+  93               	/* epilogue start */
+  94               	.LM16:
+  95 0028 0895      		ret
+  96               	.LFE5:
+  98               	.global	I2CTWI_setTransmissionErrorHandler
+ 100               	I2CTWI_setTransmissionErrorHandler:
+ 101               	.LFB6:
+ 102               	.LM17:
+ 103               	.LVL5:
+ 104               	/* prologue: function */
+ 105               	/* frame size = 0 */
+ 106               	.LM18:
+ 107 002a 9093 0000 		sts (I2CTWI_transmissionErrorHandler)+1,r25
+ 108 002e 8093 0000 		sts I2CTWI_transmissionErrorHandler,r24
+ 109               	/* epilogue start */
+ 110               	.LM19:
+ 111 0032 0895      		ret
+ 112               	.LFE6:
+ 114               	.global	I2CTWI_delay
+ 116               	I2CTWI_delay:
+ 117               	.LFB7:
+ 118               	.LM20:
+ 119 0034 DF93      		push r29
+ 120 0036 CF93      		push r28
+ 121 0038 0F92      		push __tmp_reg__
+ 122 003a CDB7      		in r28,__SP_L__
+ 123 003c DEB7      		in r29,__SP_H__
+ 124               	/* prologue: function */
+ 125               	/* frame size = 1 */
+ 126               	.LM21:
+ 127 003e 86E9      		ldi r24,lo8(-106)
+ 128 0040 8983      		std Y+1,r24
+ 129               	.LVL6:
+ 130               	.L12:
+ 131               	.LM22:
+ 132 0042 8981      		ldd r24,Y+1
+ 133 0044 8150      		subi r24,lo8(-(-1))
+ 134 0046 8983      		std Y+1,r24
+ 135               	.LVL7:
+ 136 0048 8F5F      		subi r24,lo8(-(1))
+ 137 004a 01F4      		brne .L12
+ 138               	/* epilogue start */
+ 139               	.LM23:
+ 140 004c 0F90      		pop __tmp_reg__
+ 141 004e CF91      		pop r28
+ 142 0050 DF91      		pop r29
+ 143 0052 0895      		ret
+ 144               	.LFE7:
+ 146               	.global	task_I2CTWI
+ 148               	task_I2CTWI:
+ 149               	.LFB8:
+ 150               	.LM24:
+ 151 0054 DF93      		push r29
+ 152 0056 CF93      		push r28
+ 153 0058 0F92      		push __tmp_reg__
+ 154 005a CDB7      		in r28,__SP_L__
+ 155 005c DEB7      		in r29,__SP_H__
+ 156               	/* prologue: function */
+ 157               	/* frame size = 1 */
+ 158               	.LM25:
+ 159 005e 06B6      		in __tmp_reg__,86-32
+ 160 0060 00FC      		sbrc __tmp_reg__,0
+ 161 0062 00C0      		rjmp .L22
+ 162               	.LM26:
+ 163 0064 8091 0000 		lds r24,TWI_statusReg
+ 164 0068 80FF      		sbrs r24,0
+ 165 006a 00C0      		rjmp .L23
+ 166               	.LM27:
+ 167 006c 8091 0000 		lds r24,TWI_operation
+ 168 0070 8823      		tst r24
+ 169 0072 01F4      		brne .+2
+ 170 0074 00C0      		rjmp .L22
+ 171               	.LM28:
+ 172 0076 8130      		cpi r24,lo8(1)
+ 173 0078 01F4      		brne .L18
+ 174               	.LBB35:
+ 175               	.LBB36:
+ 176               	.LM29:
+ 177 007a 86E9      		ldi r24,lo8(-106)
+ 178 007c 8983      		std Y+1,r24
+ 179               	.LVL8:
+ 180               	.L19:
+ 181               	.LM30:
+ 182 007e 8981      		ldd r24,Y+1
+ 183 0080 8150      		subi r24,lo8(-(-1))
+ 184 0082 8983      		std Y+1,r24
+ 185               	.LVL9:
+ 186 0084 8F5F      		subi r24,lo8(-(1))
+ 187 0086 01F4      		brne .L19
+ 188               	.LBE36:
+ 189               	.LBE35:
+ 190               	.LM31:
+ 191 0088 92E0      		ldi r25,lo8(2)
+ 192 008a 9093 0000 		sts TWI_msgSize,r25
+ 193               	.LM32:
+ 194 008e 8091 0000 		lds r24,I2CTWI_request_adr
+ 195 0092 8093 0000 		sts I2CTWI_buf,r24
+ 196               	.LM33:
+ 197 0096 8091 0000 		lds r24,I2CTWI_request_reg
+ 198 009a 8093 0000 		sts I2CTWI_buf+1,r24
+ 199               	.LM34:
+ 200 009e 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 201               	.LM35:
+ 202 00a2 85EA      		ldi r24,lo8(-91)
+ 203 00a4 86BF      		out 86-32,r24
+ 204               	.LM36:
+ 205 00a6 9093 0000 		sts TWI_operation,r25
+ 206 00aa 00C0      		rjmp .L22
+ 207               	.LVL10:
+ 208               	.L18:
+ 209               	.LM37:
+ 210 00ac 8230      		cpi r24,lo8(2)
+ 211 00ae 01F4      		brne .L20
+ 212               	.LBB37:
+ 213               	.LBB38:
+ 214               	.LM38:
+ 215 00b0 86E9      		ldi r24,lo8(-106)
+ 216 00b2 8983      		std Y+1,r24
+ 217               	.LVL11:
+ 218               	.L21:
+ 219               	.LM39:
+ 220 00b4 8981      		ldd r24,Y+1
+ 221 00b6 8150      		subi r24,lo8(-(-1))
+ 222 00b8 8983      		std Y+1,r24
+ 223               	.LVL12:
+ 224 00ba 8F5F      		subi r24,lo8(-(1))
+ 225 00bc 01F4      		brne .L21
+ 226               	.LBE38:
+ 227               	.LBE37:
+ 228               	.LM40:
+ 229 00be 8091 0000 		lds r24,I2CTWI_request_size
+ 230 00c2 8F5F      		subi r24,lo8(-(1))
+ 231 00c4 8093 0000 		sts TWI_msgSize,r24
+ 232               	.LM41:
+ 233 00c8 8091 0000 		lds r24,I2CTWI_request_adr
+ 234 00cc 8160      		ori r24,lo8(1)
+ 235 00ce 8093 0000 		sts I2CTWI_request_adr,r24
+ 236               	.LM42:
+ 237 00d2 8093 0000 		sts I2CTWI_buf,r24
+ 238               	.LM43:
+ 239 00d6 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 240               	.LM44:
+ 241 00da 85EA      		ldi r24,lo8(-91)
+ 242 00dc 86BF      		out 86-32,r24
+ 243               	.LM45:
+ 244 00de 83E0      		ldi r24,lo8(3)
+ 245 00e0 8093 0000 		sts TWI_operation,r24
+ 246 00e4 00C0      		rjmp .L22
+ 247               	.LVL13:
+ 248               	.L20:
+ 249               	.LM46:
+ 250 00e6 8330      		cpi r24,lo8(3)
+ 251 00e8 01F4      		brne .L22
+ 252               	.LM47:
+ 253 00ea 1092 0000 		sts TWI_operation,__zero_reg__
+ 254               	.LM48:
+ 255 00ee 8091 0000 		lds r24,I2CTWI_requestID
+ 256 00f2 9091 0000 		lds r25,(I2CTWI_requestID)+1
+ 257 00f6 2FEF      		ldi r18,hi8(-1)
+ 258 00f8 8F3F      		cpi r24,lo8(-1)
+ 259 00fa 9207      		cpc r25,r18
+ 260 00fc 01F0      		breq .L22
+ 261               	.LM49:
+ 262 00fe E091 0000 		lds r30,I2CTWI_requestedDataReadyHandler
+ 263 0102 F091 0000 		lds r31,(I2CTWI_requestedDataReadyHandler)+1
+ 264 0106 00C0      		rjmp .L27
+ 265               	.L23:
+ 266               	.LBB39:
+ 267               	.LBB40:
+ 268               	.LM50:
+ 269 0108 06B6      		in __tmp_reg__,86-32
+ 270 010a 00FC      		sbrc __tmp_reg__,0
+ 271 010c 00C0      		rjmp .L23
+ 272               	.LBB41:
+ 273               	.LM51:
+ 274 010e 9091 0000 		lds r25,TWI_TWSR_state
+ 275               	.LVL14:
+ 276               	.LBE41:
+ 277               	.LBE40:
+ 278               	.LM52:
+ 279 0112 9923      		tst r25
+ 280 0114 01F0      		breq .L22
+ 281               	.LM53:
+ 282 0116 1092 0000 		sts TWI_operation,__zero_reg__
+ 283               	.LM54:
+ 284 011a 8091 0000 		lds r24,TWI_statusReg
+ 285 011e 8160      		ori r24,lo8(1)
+ 286 0120 8093 0000 		sts TWI_statusReg,r24
+ 287               	.LM55:
+ 288 0124 1092 0000 		sts I2CTWI_request_adr,__zero_reg__
+ 289               	.LM56:
+ 290 0128 1092 0000 		sts (I2CTWI_requestID)+1,__zero_reg__
+ 291 012c 1092 0000 		sts I2CTWI_requestID,__zero_reg__
+ 292               	.LM57:
+ 293 0130 1092 0000 		sts I2CTWI_request_size,__zero_reg__
+ 294               	.LM58:
+ 295 0134 E091 0000 		lds r30,I2CTWI_transmissionErrorHandler
+ 296 0138 F091 0000 		lds r31,(I2CTWI_transmissionErrorHandler)+1
+ 297 013c 892F      		mov r24,r25
+ 298               	.L27:
+ 299 013e 0995      		icall
+ 300               	.LVL15:
+ 301               	.L22:
+ 302               	/* epilogue start */
+ 303               	.LBE39:
+ 304               	.LM59:
+ 305 0140 0F90      		pop __tmp_reg__
+ 306 0142 CF91      		pop r28
+ 307 0144 DF91      		pop r29
+ 308 0146 0895      		ret
+ 309               	.LFE8:
+ 311               	.global	I2CTWI_requestDataFromDevice
+ 313               	I2CTWI_requestDataFromDevice:
+ 314               	.LFB9:
+ 315               	.LM60:
+ 316               	.LVL16:
+ 317 0148 FF92      		push r15
+ 318 014a 0F93      		push r16
+ 319 014c 1F93      		push r17
+ 320               	/* prologue: function */
+ 321               	/* frame size = 0 */
+ 322 014e 182F      		mov r17,r24
+ 323 0150 062F      		mov r16,r22
+ 324 0152 F42E      		mov r15,r20
+ 325 0154 00C0      		rjmp .L29
+ 326               	.LVL17:
+ 327               	.L30:
+ 328               	.LM61:
+ 329 0156 0E94 0000 		call task_I2CTWI
+ 330               	.LVL18:
+ 331               	.L29:
+ 332 015a 06B6      		in __tmp_reg__,86-32
+ 333 015c 00FC      		sbrc __tmp_reg__,0
+ 334 015e 00C0      		rjmp .L30
+ 335 0160 8091 0000 		lds r24,TWI_operation
+ 336 0164 8823      		tst r24
+ 337 0166 01F4      		brne .L30
+ 338               	.LM62:
+ 339 0168 82E0      		ldi r24,lo8(2)
+ 340 016a 8093 0000 		sts TWI_operation,r24
+ 341               	.LM63:
+ 342 016e 1093 0000 		sts I2CTWI_request_adr,r17
+ 343               	.LM64:
+ 344 0172 0093 0000 		sts I2CTWI_requestID,r16
+ 345 0176 1092 0000 		sts I2CTWI_requestID+1,__zero_reg__
+ 346               	.LM65:
+ 347 017a F092 0000 		sts I2CTWI_request_size,r15
+ 348               	/* epilogue start */
+ 349               	.LM66:
+ 350 017e 1F91      		pop r17
+ 351               	.LVL19:
+ 352 0180 0F91      		pop r16
+ 353               	.LVL20:
+ 354 0182 FF90      		pop r15
+ 355               	.LVL21:
+ 356 0184 0895      		ret
+ 357               	.LFE9:
+ 359               	.global	I2CTWI_requestRegisterFromDevice
+ 361               	I2CTWI_requestRegisterFromDevice:
+ 362               	.LFB10:
+ 363               	.LM67:
+ 364               	.LVL22:
+ 365 0186 EF92      		push r14
+ 366 0188 FF92      		push r15
+ 367 018a 0F93      		push r16
+ 368 018c 1F93      		push r17
+ 369               	/* prologue: function */
+ 370               	/* frame size = 0 */
+ 371 018e E82E      		mov r14,r24
+ 372 0190 162F      		mov r17,r22
+ 373 0192 042F      		mov r16,r20
+ 374 0194 F22E      		mov r15,r18
+ 375 0196 00C0      		rjmp .L33
+ 376               	.LVL23:
+ 377               	.L34:
+ 378               	.LM68:
+ 379 0198 0E94 0000 		call task_I2CTWI
+ 380               	.LVL24:
+ 381               	.L33:
+ 382 019c 06B6      		in __tmp_reg__,86-32
+ 383 019e 00FC      		sbrc __tmp_reg__,0
+ 384 01a0 00C0      		rjmp .L34
+ 385 01a2 8091 0000 		lds r24,TWI_operation
+ 386 01a6 8823      		tst r24
+ 387 01a8 01F4      		brne .L34
+ 388               	.LM69:
+ 389 01aa 81E0      		ldi r24,lo8(1)
+ 390 01ac 8093 0000 		sts TWI_operation,r24
+ 391               	.LM70:
+ 392 01b0 1093 0000 		sts I2CTWI_requestID,r17
+ 393 01b4 1092 0000 		sts I2CTWI_requestID+1,__zero_reg__
+ 394               	.LM71:
+ 395 01b8 E092 0000 		sts I2CTWI_request_adr,r14
+ 396               	.LM72:
+ 397 01bc 0093 0000 		sts I2CTWI_request_reg,r16
+ 398               	.LM73:
+ 399 01c0 F092 0000 		sts I2CTWI_request_size,r15
+ 400               	/* epilogue start */
+ 401               	.LM74:
+ 402 01c4 1F91      		pop r17
+ 403               	.LVL25:
+ 404 01c6 0F91      		pop r16
+ 405               	.LVL26:
+ 406 01c8 FF90      		pop r15
+ 407               	.LVL27:
+ 408 01ca EF90      		pop r14
+ 409               	.LVL28:
+ 410 01cc 0895      		ret
+ 411               	.LFE10:
+ 413               	.global	I2CTWI_getReceivedData
+ 415               	I2CTWI_getReceivedData:
+ 416               	.LFB11:
+ 417               	.LM75:
+ 418               	.LVL29:
+ 419               	/* prologue: function */
+ 420               	/* frame size = 0 */
+ 421 01ce 9C01      		movw r18,r24
+ 422               	.LVL30:
+ 423               	.L37:
+ 424               	.LM76:
+ 425 01d0 06B6      		in __tmp_reg__,86-32
+ 426 01d2 00FC      		sbrc __tmp_reg__,0
+ 427 01d4 00C0      		rjmp .L37
+ 428               	.LM77:
+ 429 01d6 8091 0000 		lds r24,TWI_statusReg
+ 430 01da 80FF      		sbrs r24,0
+ 431 01dc 00C0      		rjmp .L41
+ 432 01de E0E0      		ldi r30,lo8(I2CTWI_recbuf+1)
+ 433 01e0 F0E0      		ldi r31,hi8(I2CTWI_recbuf+1)
+ 434 01e2 D901      		movw r26,r18
+ 435               	.LM78:
+ 436 01e4 70E0      		ldi r23,lo8(0)
+ 437 01e6 6E0F      		add r22,r30
+ 438 01e8 7F1F      		adc r23,r31
+ 439               	.LVL31:
+ 440 01ea 00C0      		rjmp .L39
+ 441               	.L40:
+ 442               	.LM79:
+ 443 01ec 8191      		ld r24,Z+
+ 444 01ee 8D93      		st X+,r24
+ 445               	.L39:
+ 446               	.LM80:
+ 447 01f0 E617      		cp r30,r22
+ 448 01f2 F707      		cpc r31,r23
+ 449 01f4 01F4      		brne .L40
+ 450               	.LVL32:
+ 451               	.L41:
+ 452 01f6 0895      		ret
+ 453               	.LFE11:
+ 455               	.global	I2CTWI_getState
+ 457               	I2CTWI_getState:
+ 458               	.LFB12:
+ 459               	.LM81:
+ 460               	/* prologue: function */
+ 461               	/* frame size = 0 */
+ 462               	.L44:
+ 463               	.LM82:
+ 464 01f8 06B6      		in __tmp_reg__,86-32
+ 465 01fa 00FC      		sbrc __tmp_reg__,0
+ 466 01fc 00C0      		rjmp .L44
+ 467               	.LM83:
+ 468 01fe 8091 0000 		lds r24,TWI_TWSR_state
+ 469               	/* epilogue start */
+ 470 0202 0895      		ret
+ 471               	.LFE12:
+ 473               	.global	I2CTWI_readRegisters
+ 475               	I2CTWI_readRegisters:
+ 476               	.LFB13:
+ 477               	.LM84:
+ 478               	.LVL33:
+ 479 0204 FF92      		push r15
+ 480 0206 0F93      		push r16
+ 481 0208 1F93      		push r17
+ 482 020a CF93      		push r28
+ 483 020c DF93      		push r29
+ 484               	/* prologue: function */
+ 485               	/* frame size = 0 */
+ 486 020e 082F      		mov r16,r24
+ 487 0210 F62E      		mov r15,r22
+ 488 0212 EA01      		movw r28,r20
+ 489 0214 122F      		mov r17,r18
+ 490 0216 00C0      		rjmp .L48
+ 491               	.LVL34:
+ 492               	.L49:
+ 493               	.LM85:
+ 494 0218 0E94 0000 		call task_I2CTWI
+ 495               	.LVL35:
+ 496               	.L48:
+ 497 021c 06B6      		in __tmp_reg__,86-32
+ 498 021e 00FC      		sbrc __tmp_reg__,0
+ 499 0220 00C0      		rjmp .L49
+ 500 0222 8091 0000 		lds r24,TWI_operation
+ 501 0226 8823      		tst r24
+ 502 0228 01F4      		brne .L49
+ 503               	.LM86:
+ 504 022a 81E0      		ldi r24,lo8(1)
+ 505 022c 8093 0000 		sts TWI_operation,r24
+ 506               	.LM87:
+ 507 0230 0093 0000 		sts I2CTWI_request_adr,r16
+ 508               	.LM88:
+ 509 0234 8FEF      		ldi r24,lo8(-1)
+ 510 0236 9FEF      		ldi r25,hi8(-1)
+ 511 0238 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 512 023c 8093 0000 		sts I2CTWI_requestID,r24
+ 513               	.LM89:
+ 514 0240 F092 0000 		sts I2CTWI_request_reg,r15
+ 515               	.LM90:
+ 516 0244 1093 0000 		sts I2CTWI_request_size,r17
+ 517 0248 00C0      		rjmp .L50
+ 518               	.L51:
+ 519               	.LM91:
+ 520 024a 0E94 0000 		call task_I2CTWI
+ 521               	.LVL36:
+ 522               	.L50:
+ 523 024e 06B6      		in __tmp_reg__,86-32
+ 524 0250 00FC      		sbrc __tmp_reg__,0
+ 525 0252 00C0      		rjmp .L51
+ 526 0254 8091 0000 		lds r24,TWI_operation
+ 527 0258 8823      		tst r24
+ 528 025a 01F4      		brne .L51
+ 529               	.LM92:
+ 530 025c 8091 0000 		lds r24,TWI_statusReg
+ 531 0260 80FF      		sbrs r24,0
+ 532 0262 00C0      		rjmp .L53
+ 533               	.LM93:
+ 534 0264 1F5F      		subi r17,lo8(-(1))
+ 535 0266 CE01      		movw r24,r28
+ 536 0268 612F      		mov r22,r17
+ 537 026a 0E94 0000 		call I2CTWI_getReceivedData
+ 538               	.LVL37:
+ 539               	.L53:
+ 540               	/* epilogue start */
+ 541               	.LM94:
+ 542 026e DF91      		pop r29
+ 543 0270 CF91      		pop r28
+ 544               	.LVL38:
+ 545 0272 1F91      		pop r17
+ 546               	.LVL39:
+ 547 0274 0F91      		pop r16
+ 548               	.LVL40:
+ 549 0276 FF90      		pop r15
+ 550               	.LVL41:
+ 551 0278 0895      		ret
+ 552               	.LFE13:
+ 554               	.global	I2CTWI_readBytes
+ 556               	I2CTWI_readBytes:
+ 557               	.LFB14:
+ 558               	.LM95:
+ 559               	.LVL42:
+ 560 027a EF92      		push r14
+ 561 027c FF92      		push r15
+ 562 027e 0F93      		push r16
+ 563 0280 1F93      		push r17
+ 564 0282 DF93      		push r29
+ 565 0284 CF93      		push r28
+ 566 0286 0F92      		push __tmp_reg__
+ 567 0288 CDB7      		in r28,__SP_L__
+ 568 028a DEB7      		in r29,__SP_H__
+ 569               	/* prologue: function */
+ 570               	/* frame size = 1 */
+ 571 028c 082F      		mov r16,r24
+ 572 028e 7B01      		movw r14,r22
+ 573 0290 142F      		mov r17,r20
+ 574 0292 00C0      		rjmp .L55
+ 575               	.LVL43:
+ 576               	.L56:
+ 577               	.LM96:
+ 578 0294 0E94 0000 		call task_I2CTWI
+ 579               	.LVL44:
+ 580               	.L55:
+ 581 0298 06B6      		in __tmp_reg__,86-32
+ 582 029a 00FC      		sbrc __tmp_reg__,0
+ 583 029c 00C0      		rjmp .L56
+ 584 029e 8091 0000 		lds r24,TWI_operation
+ 585 02a2 8823      		tst r24
+ 586 02a4 01F4      		brne .L56
+ 587               	.LBB42:
+ 588               	.LBB43:
+ 589               	.LM97:
+ 590 02a6 86E9      		ldi r24,lo8(-106)
+ 591 02a8 8983      		std Y+1,r24
+ 592               	.LVL45:
+ 593               	.L57:
+ 594               	.LM98:
+ 595 02aa 8981      		ldd r24,Y+1
+ 596 02ac 8150      		subi r24,lo8(-(-1))
+ 597 02ae 8983      		std Y+1,r24
+ 598               	.LVL46:
+ 599 02b0 8F5F      		subi r24,lo8(-(1))
+ 600 02b2 01F4      		brne .L57
+ 601               	.LBE43:
+ 602               	.LBE42:
+ 603               	.LM99:
+ 604 02b4 82E0      		ldi r24,lo8(2)
+ 605 02b6 8093 0000 		sts TWI_operation,r24
+ 606               	.LM100:
+ 607 02ba 0093 0000 		sts I2CTWI_request_adr,r16
+ 608               	.LM101:
+ 609 02be 8FEF      		ldi r24,lo8(-1)
+ 610 02c0 9FEF      		ldi r25,hi8(-1)
+ 611 02c2 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 612 02c6 8093 0000 		sts I2CTWI_requestID,r24
+ 613               	.LM102:
+ 614 02ca 1093 0000 		sts I2CTWI_request_size,r17
+ 615 02ce 00C0      		rjmp .L58
+ 616               	.L59:
+ 617               	.LM103:
+ 618 02d0 0E94 0000 		call task_I2CTWI
+ 619               	.LVL47:
+ 620               	.L58:
+ 621 02d4 06B6      		in __tmp_reg__,86-32
+ 622 02d6 00FC      		sbrc __tmp_reg__,0
+ 623 02d8 00C0      		rjmp .L59
+ 624 02da 8091 0000 		lds r24,TWI_operation
+ 625 02de 8823      		tst r24
+ 626 02e0 01F4      		brne .L59
+ 627               	.LM104:
+ 628 02e2 8091 0000 		lds r24,TWI_statusReg
+ 629 02e6 80FF      		sbrs r24,0
+ 630 02e8 00C0      		rjmp .L61
+ 631               	.LM105:
+ 632 02ea 1F5F      		subi r17,lo8(-(1))
+ 633 02ec C701      		movw r24,r14
+ 634 02ee 612F      		mov r22,r17
+ 635 02f0 0E94 0000 		call I2CTWI_getReceivedData
+ 636               	.LVL48:
+ 637               	.L61:
+ 638               	/* epilogue start */
+ 639               	.LM106:
+ 640 02f4 0F90      		pop __tmp_reg__
+ 641 02f6 CF91      		pop r28
+ 642 02f8 DF91      		pop r29
+ 643 02fa 1F91      		pop r17
+ 644               	.LVL49:
+ 645 02fc 0F91      		pop r16
+ 646               	.LVL50:
+ 647 02fe FF90      		pop r15
+ 648 0300 EF90      		pop r14
+ 649               	.LVL51:
+ 650 0302 0895      		ret
+ 651               	.LFE14:
+ 653               	.global	I2CTWI_readByte
+ 655               	I2CTWI_readByte:
+ 656               	.LFB15:
+ 657               	.LM107:
+ 658               	.LVL52:
+ 659 0304 1F93      		push r17
+ 660 0306 DF93      		push r29
+ 661 0308 CF93      		push r28
+ 662 030a 0F92      		push __tmp_reg__
+ 663 030c CDB7      		in r28,__SP_L__
+ 664 030e DEB7      		in r29,__SP_H__
+ 665               	/* prologue: function */
+ 666               	/* frame size = 1 */
+ 667 0310 182F      		mov r17,r24
+ 668 0312 00C0      		rjmp .L64
+ 669               	.LVL53:
+ 670               	.L65:
+ 671               	.LM108:
+ 672 0314 0E94 0000 		call task_I2CTWI
+ 673               	.LVL54:
+ 674               	.L64:
+ 675 0318 06B6      		in __tmp_reg__,86-32
+ 676 031a 00FC      		sbrc __tmp_reg__,0
+ 677 031c 00C0      		rjmp .L65
+ 678 031e 8091 0000 		lds r24,TWI_operation
+ 679 0322 8823      		tst r24
+ 680 0324 01F4      		brne .L65
+ 681               	.LBB44:
+ 682               	.LBB45:
+ 683               	.LM109:
+ 684 0326 86E9      		ldi r24,lo8(-106)
+ 685 0328 8983      		std Y+1,r24
+ 686               	.LVL55:
+ 687               	.L66:
+ 688               	.LM110:
+ 689 032a 8981      		ldd r24,Y+1
+ 690 032c 8150      		subi r24,lo8(-(-1))
+ 691 032e 8983      		std Y+1,r24
+ 692               	.LVL56:
+ 693 0330 8F5F      		subi r24,lo8(-(1))
+ 694 0332 01F4      		brne .L66
+ 695               	.LBE45:
+ 696               	.LBE44:
+ 697               	.LM111:
+ 698 0334 82E0      		ldi r24,lo8(2)
+ 699 0336 8093 0000 		sts TWI_operation,r24
+ 700               	.LM112:
+ 701 033a 1093 0000 		sts I2CTWI_request_adr,r17
+ 702               	.LM113:
+ 703 033e 8FEF      		ldi r24,lo8(-1)
+ 704 0340 9FEF      		ldi r25,hi8(-1)
+ 705 0342 9093 0000 		sts (I2CTWI_requestID)+1,r25
+ 706 0346 8093 0000 		sts I2CTWI_requestID,r24
+ 707               	.LM114:
+ 708 034a 81E0      		ldi r24,lo8(1)
+ 709 034c 8093 0000 		sts I2CTWI_request_size,r24
+ 710 0350 00C0      		rjmp .L67
+ 711               	.L68:
+ 712               	.LM115:
+ 713 0352 0E94 0000 		call task_I2CTWI
+ 714               	.L67:
+ 715 0356 8091 0000 		lds r24,TWI_operation
+ 716 035a 8823      		tst r24
+ 717 035c 01F4      		brne .L68
+ 718               	.LM116:
+ 719 035e 8091 0000 		lds r24,TWI_statusReg
+ 720 0362 80FD      		sbrc r24,0
+ 721 0364 00C0      		rjmp .L69
+ 722 0366 80E0      		ldi r24,lo8(0)
+ 723 0368 00C0      		rjmp .L70
+ 724               	.L69:
+ 725               	.LM117:
+ 726 036a 8091 0000 		lds r24,I2CTWI_recbuf+1
+ 727               	.L70:
+ 728               	/* epilogue start */
+ 729               	.LM118:
+ 730 036e 0F90      		pop __tmp_reg__
+ 731 0370 CF91      		pop r28
+ 732 0372 DF91      		pop r29
+ 733 0374 1F91      		pop r17
+ 734               	.LVL57:
+ 735 0376 0895      		ret
+ 736               	.LFE15:
+ 738               	.global	I2CTWI_transmitByte
+ 740               	I2CTWI_transmitByte:
+ 741               	.LFB16:
+ 742               	.LM119:
+ 743               	.LVL58:
+ 744 0378 0F93      		push r16
+ 745 037a 1F93      		push r17
+ 746 037c DF93      		push r29
+ 747 037e CF93      		push r28
+ 748 0380 0F92      		push __tmp_reg__
+ 749 0382 CDB7      		in r28,__SP_L__
+ 750 0384 DEB7      		in r29,__SP_H__
+ 751               	/* prologue: function */
+ 752               	/* frame size = 1 */
+ 753 0386 182F      		mov r17,r24
+ 754 0388 062F      		mov r16,r22
+ 755 038a 00C0      		rjmp .L74
+ 756               	.LVL59:
+ 757               	.L75:
+ 758               	.LM120:
+ 759 038c 0E94 0000 		call task_I2CTWI
+ 760               	.LVL60:
+ 761               	.L74:
+ 762 0390 06B6      		in __tmp_reg__,86-32
+ 763 0392 00FC      		sbrc __tmp_reg__,0
+ 764 0394 00C0      		rjmp .L75
+ 765 0396 8091 0000 		lds r24,TWI_operation
+ 766 039a 8823      		tst r24
+ 767 039c 01F4      		brne .L75
+ 768               	.LBB46:
+ 769               	.LBB47:
+ 770               	.LM121:
+ 771 039e 86E9      		ldi r24,lo8(-106)
+ 772 03a0 8983      		std Y+1,r24
+ 773               	.LVL61:
+ 774               	.L76:
+ 775               	.LM122:
+ 776 03a2 8981      		ldd r24,Y+1
+ 777 03a4 8150      		subi r24,lo8(-(-1))
+ 778 03a6 8983      		std Y+1,r24
+ 779               	.LVL62:
+ 780 03a8 8F5F      		subi r24,lo8(-(1))
+ 781 03aa 01F4      		brne .L76
+ 782               	.LBE47:
+ 783               	.LBE46:
+ 784               	.LM123:
+ 785 03ac 82E0      		ldi r24,lo8(2)
+ 786 03ae 8093 0000 		sts TWI_msgSize,r24
+ 787               	.LM124:
+ 788 03b2 1093 0000 		sts I2CTWI_buf,r17
+ 789               	.LM125:
+ 790 03b6 0093 0000 		sts I2CTWI_buf+1,r16
+ 791               	.LM126:
+ 792 03ba 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 793               	.LM127:
+ 794 03be 85EA      		ldi r24,lo8(-91)
+ 795 03c0 86BF      		out 86-32,r24
+ 796               	/* epilogue start */
+ 797               	.LM128:
+ 798 03c2 0F90      		pop __tmp_reg__
+ 799 03c4 CF91      		pop r28
+ 800 03c6 DF91      		pop r29
+ 801 03c8 1F91      		pop r17
+ 802               	.LVL63:
+ 803 03ca 0F91      		pop r16
+ 804               	.LVL64:
+ 805 03cc 0895      		ret
+ 806               	.LFE16:
+ 808               	.global	I2CTWI_transmit2Bytes
+ 810               	I2CTWI_transmit2Bytes:
+ 811               	.LFB17:
+ 812               	.LM129:
+ 813               	.LVL65:
+ 814 03ce FF92      		push r15
+ 815 03d0 0F93      		push r16
+ 816 03d2 1F93      		push r17
+ 817 03d4 DF93      		push r29
+ 818 03d6 CF93      		push r28
+ 819 03d8 0F92      		push __tmp_reg__
+ 820 03da CDB7      		in r28,__SP_L__
+ 821 03dc DEB7      		in r29,__SP_H__
+ 822               	/* prologue: function */
+ 823               	/* frame size = 1 */
+ 824 03de 182F      		mov r17,r24
+ 825 03e0 062F      		mov r16,r22
+ 826 03e2 F42E      		mov r15,r20
+ 827 03e4 00C0      		rjmp .L80
+ 828               	.LVL66:
+ 829               	.L81:
+ 830               	.LM130:
+ 831 03e6 0E94 0000 		call task_I2CTWI
+ 832               	.LVL67:
+ 833               	.L80:
+ 834 03ea 06B6      		in __tmp_reg__,86-32
+ 835 03ec 00FC      		sbrc __tmp_reg__,0
+ 836 03ee 00C0      		rjmp .L81
+ 837 03f0 8091 0000 		lds r24,TWI_operation
+ 838 03f4 8823      		tst r24
+ 839 03f6 01F4      		brne .L81
+ 840               	.LBB48:
+ 841               	.LBB49:
+ 842               	.LM131:
+ 843 03f8 86E9      		ldi r24,lo8(-106)
+ 844 03fa 8983      		std Y+1,r24
+ 845               	.LVL68:
+ 846               	.L82:
+ 847               	.LM132:
+ 848 03fc 8981      		ldd r24,Y+1
+ 849 03fe 8150      		subi r24,lo8(-(-1))
+ 850 0400 8983      		std Y+1,r24
+ 851               	.LVL69:
+ 852 0402 8F5F      		subi r24,lo8(-(1))
+ 853 0404 01F4      		brne .L82
+ 854               	.LBE49:
+ 855               	.LBE48:
+ 856               	.LM133:
+ 857 0406 83E0      		ldi r24,lo8(3)
+ 858 0408 8093 0000 		sts TWI_msgSize,r24
+ 859               	.LM134:
+ 860 040c 1093 0000 		sts I2CTWI_buf,r17
+ 861               	.LM135:
+ 862 0410 0093 0000 		sts I2CTWI_buf+1,r16
+ 863               	.LM136:
+ 864 0414 F092 0000 		sts I2CTWI_buf+2,r15
+ 865               	.LM137:
+ 866 0418 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 867               	.LM138:
+ 868 041c 85EA      		ldi r24,lo8(-91)
+ 869 041e 86BF      		out 86-32,r24
+ 870               	/* epilogue start */
+ 871               	.LM139:
+ 872 0420 0F90      		pop __tmp_reg__
+ 873 0422 CF91      		pop r28
+ 874 0424 DF91      		pop r29
+ 875 0426 1F91      		pop r17
+ 876               	.LVL70:
+ 877 0428 0F91      		pop r16
+ 878               	.LVL71:
+ 879 042a FF90      		pop r15
+ 880               	.LVL72:
+ 881 042c 0895      		ret
+ 882               	.LFE17:
+ 884               	.global	I2CTWI_transmit3Bytes
+ 886               	I2CTWI_transmit3Bytes:
+ 887               	.LFB18:
+ 888               	.LM140:
+ 889               	.LVL73:
+ 890 042e EF92      		push r14
+ 891 0430 FF92      		push r15
+ 892 0432 0F93      		push r16
+ 893 0434 1F93      		push r17
+ 894 0436 DF93      		push r29
+ 895 0438 CF93      		push r28
+ 896 043a 0F92      		push __tmp_reg__
+ 897 043c CDB7      		in r28,__SP_L__
+ 898 043e DEB7      		in r29,__SP_H__
+ 899               	/* prologue: function */
+ 900               	/* frame size = 1 */
+ 901 0440 182F      		mov r17,r24
+ 902 0442 062F      		mov r16,r22
+ 903 0444 F42E      		mov r15,r20
+ 904 0446 E22E      		mov r14,r18
+ 905 0448 00C0      		rjmp .L86
+ 906               	.LVL74:
+ 907               	.L87:
+ 908               	.LM141:
+ 909 044a 0E94 0000 		call task_I2CTWI
+ 910               	.LVL75:
+ 911               	.L86:
+ 912 044e 06B6      		in __tmp_reg__,86-32
+ 913 0450 00FC      		sbrc __tmp_reg__,0
+ 914 0452 00C0      		rjmp .L87
+ 915 0454 8091 0000 		lds r24,TWI_operation
+ 916 0458 8823      		tst r24
+ 917 045a 01F4      		brne .L87
+ 918               	.LBB50:
+ 919               	.LBB51:
+ 920               	.LM142:
+ 921 045c 86E9      		ldi r24,lo8(-106)
+ 922 045e 8983      		std Y+1,r24
+ 923               	.LVL76:
+ 924               	.L88:
+ 925               	.LM143:
+ 926 0460 8981      		ldd r24,Y+1
+ 927 0462 8150      		subi r24,lo8(-(-1))
+ 928 0464 8983      		std Y+1,r24
+ 929               	.LVL77:
+ 930 0466 8F5F      		subi r24,lo8(-(1))
+ 931 0468 01F4      		brne .L88
+ 932               	.LBE51:
+ 933               	.LBE50:
+ 934               	.LM144:
+ 935 046a 84E0      		ldi r24,lo8(4)
+ 936 046c 8093 0000 		sts TWI_msgSize,r24
+ 937               	.LM145:
+ 938 0470 1093 0000 		sts I2CTWI_buf,r17
+ 939               	.LM146:
+ 940 0474 0093 0000 		sts I2CTWI_buf+1,r16
+ 941               	.LM147:
+ 942 0478 F092 0000 		sts I2CTWI_buf+2,r15
+ 943               	.LM148:
+ 944 047c E092 0000 		sts I2CTWI_buf+3,r14
+ 945               	.LM149:
+ 946 0480 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 947               	.LM150:
+ 948 0484 85EA      		ldi r24,lo8(-91)
+ 949 0486 86BF      		out 86-32,r24
+ 950               	/* epilogue start */
+ 951               	.LM151:
+ 952 0488 0F90      		pop __tmp_reg__
+ 953 048a CF91      		pop r28
+ 954 048c DF91      		pop r29
+ 955 048e 1F91      		pop r17
+ 956               	.LVL78:
+ 957 0490 0F91      		pop r16
+ 958               	.LVL79:
+ 959 0492 FF90      		pop r15
+ 960               	.LVL80:
+ 961 0494 EF90      		pop r14
+ 962               	.LVL81:
+ 963 0496 0895      		ret
+ 964               	.LFE18:
+ 966               	.global	I2CTWI_transmit4Bytes
+ 968               	I2CTWI_transmit4Bytes:
+ 969               	.LFB19:
+ 970               	.LM152:
+ 971               	.LVL82:
+ 972 0498 DF92      		push r13
+ 973 049a EF92      		push r14
+ 974 049c FF92      		push r15
+ 975 049e 0F93      		push r16
+ 976               	.LVL83:
+ 977 04a0 1F93      		push r17
+ 978 04a2 DF93      		push r29
+ 979 04a4 CF93      		push r28
+ 980 04a6 0F92      		push __tmp_reg__
+ 981 04a8 CDB7      		in r28,__SP_L__
+ 982 04aa DEB7      		in r29,__SP_H__
+ 983               	/* prologue: function */
+ 984               	/* frame size = 1 */
+ 985 04ac 182F      		mov r17,r24
+ 986 04ae F62E      		mov r15,r22
+ 987 04b0 E42E      		mov r14,r20
+ 988 04b2 D22E      		mov r13,r18
+ 989 04b4 00C0      		rjmp .L92
+ 990               	.LVL84:
+ 991               	.L93:
+ 992               	.LM153:
+ 993 04b6 0E94 0000 		call task_I2CTWI
+ 994               	.LVL85:
+ 995               	.L92:
+ 996 04ba 06B6      		in __tmp_reg__,86-32
+ 997 04bc 00FC      		sbrc __tmp_reg__,0
+ 998 04be 00C0      		rjmp .L93
+ 999 04c0 8091 0000 		lds r24,TWI_operation
+ 1000 04c4 8823      		tst r24
+ 1001 04c6 01F4      		brne .L93
+ 1002               	.LBB52:
+ 1003               	.LBB53:
+ 1004               	.LM154:
+ 1005 04c8 86E9      		ldi r24,lo8(-106)
+ 1006 04ca 8983      		std Y+1,r24
+ 1007               	.LVL86:
+ 1008               	.L94:
+ 1009               	.LM155:
+ 1010 04cc 8981      		ldd r24,Y+1
+ 1011 04ce 8150      		subi r24,lo8(-(-1))
+ 1012 04d0 8983      		std Y+1,r24
+ 1013               	.LVL87:
+ 1014 04d2 8F5F      		subi r24,lo8(-(1))
+ 1015 04d4 01F4      		brne .L94
+ 1016               	.LBE53:
+ 1017               	.LBE52:
+ 1018               	.LM156:
+ 1019 04d6 85E0      		ldi r24,lo8(5)
+ 1020 04d8 8093 0000 		sts TWI_msgSize,r24
+ 1021               	.LM157:
+ 1022 04dc 1093 0000 		sts I2CTWI_buf,r17
+ 1023               	.LM158:
+ 1024 04e0 F092 0000 		sts I2CTWI_buf+1,r15
+ 1025               	.LM159:
+ 1026 04e4 E092 0000 		sts I2CTWI_buf+2,r14
+ 1027               	.LM160:
+ 1028 04e8 D092 0000 		sts I2CTWI_buf+3,r13
+ 1029               	.LM161:
+ 1030 04ec 0093 0000 		sts I2CTWI_buf+4,r16
+ 1031               	.LVL88:
+ 1032               	.LM162:
+ 1033 04f0 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 1034               	.LM163:
+ 1035 04f4 85EA      		ldi r24,lo8(-91)
+ 1036 04f6 86BF      		out 86-32,r24
+ 1037               	/* epilogue start */
+ 1038               	.LM164:
+ 1039 04f8 0F90      		pop __tmp_reg__
+ 1040 04fa CF91      		pop r28
+ 1041 04fc DF91      		pop r29
+ 1042 04fe 1F91      		pop r17
+ 1043               	.LVL89:
+ 1044 0500 0F91      		pop r16
+ 1045               	.LVL90:
+ 1046 0502 FF90      		pop r15
+ 1047               	.LVL91:
+ 1048 0504 EF90      		pop r14
+ 1049               	.LVL92:
+ 1050 0506 DF90      		pop r13
+ 1051               	.LVL93:
+ 1052 0508 0895      		ret
+ 1053               	.LFE19:
+ 1055               	.global	I2CTWI_transmitBytes
+ 1057               	I2CTWI_transmitBytes:
+ 1058               	.LFB20:
+ 1059               	.LM165:
+ 1060               	.LVL94:
+ 1061 050a EF92      		push r14
+ 1062 050c FF92      		push r15
+ 1063 050e 0F93      		push r16
+ 1064 0510 1F93      		push r17
+ 1065 0512 DF93      		push r29
+ 1066 0514 CF93      		push r28
+ 1067 0516 0F92      		push __tmp_reg__
+ 1068 0518 CDB7      		in r28,__SP_L__
+ 1069 051a DEB7      		in r29,__SP_H__
+ 1070               	/* prologue: function */
+ 1071               	/* frame size = 1 */
+ 1072 051c 082F      		mov r16,r24
+ 1073 051e F62E      		mov r15,r22
+ 1074 0520 E72E      		mov r14,r23
+ 1075               	.LVL95:
+ 1076 0522 142F      		mov r17,r20
+ 1077 0524 00C0      		rjmp .L98
+ 1078               	.LVL96:
+ 1079               	.L99:
+ 1080               	.LM166:
+ 1081 0526 0E94 0000 		call task_I2CTWI
+ 1082               	.LVL97:
+ 1083               	.L98:
+ 1084 052a 06B6      		in __tmp_reg__,86-32
+ 1085 052c 00FC      		sbrc __tmp_reg__,0
+ 1086 052e 00C0      		rjmp .L99
+ 1087 0530 8091 0000 		lds r24,TWI_operation
+ 1088 0534 8823      		tst r24
+ 1089 0536 01F4      		brne .L99
+ 1090               	.LBB54:
+ 1091               	.LBB55:
+ 1092               	.LM167:
+ 1093 0538 86E9      		ldi r24,lo8(-106)
+ 1094 053a 8983      		std Y+1,r24
+ 1095               	.LVL98:
+ 1096               	.L100:
+ 1097               	.LM168:
+ 1098 053c 8981      		ldd r24,Y+1
+ 1099 053e 8150      		subi r24,lo8(-(-1))
+ 1100 0540 8983      		std Y+1,r24
+ 1101               	.LVL99:
+ 1102 0542 8F5F      		subi r24,lo8(-(1))
+ 1103 0544 01F4      		brne .L100
+ 1104               	.LBE55:
+ 1105               	.LBE54:
+ 1106               	.LM169:
+ 1107 0546 412F      		mov r20,r17
+ 1108 0548 4F5F      		subi r20,lo8(-(1))
+ 1109               	.LVL100:
+ 1110               	.LM170:
+ 1111 054a 4093 0000 		sts TWI_msgSize,r20
+ 1112               	.LM171:
+ 1113 054e 0093 0000 		sts I2CTWI_buf,r16
+ 1114 0552 A0E0      		ldi r26,lo8(I2CTWI_buf+1)
+ 1115 0554 B0E0      		ldi r27,hi8(I2CTWI_buf+1)
+ 1116 0556 8F2D      		mov r24,r15
+ 1117 0558 9E2D      		mov r25,r14
+ 1118 055a 9C01      		movw r18,r24
+ 1119 055c F901      		movw r30,r18
+ 1120 055e 00C0      		rjmp .L101
+ 1121               	.L102:
+ 1122               	.LM172:
+ 1123 0560 8191      		ld r24,Z+
+ 1124 0562 8D93      		st X+,r24
+ 1125               	.L101:
+ 1126               	.LM173:
+ 1127 0564 8E2F      		mov r24,r30
+ 1128 0566 8F19      		sub r24,r15
+ 1129 0568 8417      		cp r24,r20
+ 1130 056a 00F0      		brlo .L102
+ 1131               	.LM174:
+ 1132 056c 1092 0000 		sts TWI_statusReg,__zero_reg__
+ 1133               	.LM175:
+ 1134 0570 85EA      		ldi r24,lo8(-91)
+ 1135 0572 86BF      		out 86-32,r24
+ 1136               	/* epilogue start */
+ 1137               	.LM176:
+ 1138 0574 0F90      		pop __tmp_reg__
+ 1139 0576 CF91      		pop r28
+ 1140 0578 DF91      		pop r29
+ 1141 057a 1F91      		pop r17
+ 1142 057c 0F91      		pop r16
+ 1143               	.LVL101:
+ 1144 057e FF90      		pop r15
+ 1145               	.LVL102:
+ 1146 0580 EF90      		pop r14
+ 1147               	.LVL103:
+ 1148 0582 0895      		ret
+ 1149               	.LFE20:
+ 1151               	.global	__vector_19
+ 1153               	__vector_19:
+ 1154               	.LFB21:
+ 1155               	.LM177:
+ 1156 0584 1F92      		push __zero_reg__
+ 1157 0586 0F92      		push r0
+ 1158 0588 0FB6      		in r0,__SREG__
+ 1159 058a 0F92      		push r0
+ 1160 058c 1124      		clr __zero_reg__
+ 1161 058e 2F93      		push r18
+ 1162 0590 3F93      		push r19
+ 1163 0592 8F93      		push r24
+ 1164 0594 9F93      		push r25
+ 1165 0596 EF93      		push r30
+ 1166 0598 FF93      		push r31
+ 1167               	/* prologue: Signal */
+ 1168               	/* frame size = 0 */
+ 1169               	.LM178:
+ 1170 059a 81B1      		in r24,33-32
+ 1171 059c 8832      		cpi r24,lo8(40)
+ 1172 059e 01F0      		breq .L108
+ 1173 05a0 8932      		cpi r24,lo8(41)
+ 1174 05a2 00F4      		brsh .L113
+ 1175 05a4 8031      		cpi r24,lo8(16)
+ 1176 05a6 01F0      		breq .L107
+ 1177 05a8 8831      		cpi r24,lo8(24)
+ 1178 05aa 01F0      		breq .L108
+ 1179 05ac 8830      		cpi r24,lo8(8)
+ 1180 05ae 01F0      		breq .+2
+ 1181 05b0 00C0      		rjmp .L106
+ 1182 05b2 00C0      		rjmp .L107
+ 1183               	.L113:
+ 1184 05b4 8034      		cpi r24,lo8(64)
+ 1185 05b6 01F0      		breq .L110
+ 1186 05b8 8134      		cpi r24,lo8(65)
+ 1187 05ba 00F4      		brsh .L114
+ 1188 05bc 8833      		cpi r24,lo8(56)
+ 1189 05be 01F0      		breq .+2
+ 1190 05c0 00C0      		rjmp .L106
+ 1191 05c2 00C0      		rjmp .L122
+ 1192               	.L114:
+ 1193 05c4 8035      		cpi r24,lo8(80)
+ 1194 05c6 01F0      		breq .L111
+ 1195 05c8 8835      		cpi r24,lo8(88)
+ 1196 05ca 01F4      		brne .L106
+ 1197 05cc 00C0      		rjmp .L123
+ 1198               	.L107:
+ 1199               	.LM179:
+ 1200 05ce 1092 0000 		sts TWI_bufPos.2103,__zero_reg__
+ 1201               	.L108:
+ 1202               	.LM180:
+ 1203 05d2 9091 0000 		lds r25,TWI_bufPos.2103
+ 1204 05d6 8091 0000 		lds r24,TWI_msgSize
+ 1205 05da 9817      		cp r25,r24
+ 1206 05dc 00F4      		brsh .L121
+ 1207               	.LM181:
+ 1208 05de E92F      		mov r30,r25
+ 1209 05e0 F0E0      		ldi r31,lo8(0)
+ 1210 05e2 E050      		subi r30,lo8(-(I2CTWI_buf))
+ 1211 05e4 F040      		sbci r31,hi8(-(I2CTWI_buf))
+ 1212 05e6 8081      		ld r24,Z
+ 1213 05e8 83B9      		out 35-32,r24
+ 1214 05ea 9F5F      		subi r25,lo8(-(1))
+ 1215 05ec 9093 0000 		sts TWI_bufPos.2103,r25
+ 1216 05f0 00C0      		rjmp .L117
+ 1217               	.L111:
+ 1218               	.LM182:
+ 1219 05f2 8091 0000 		lds r24,TWI_bufPos.2103
+ 1220 05f6 93B1      		in r25,35-32
+ 1221 05f8 E82F      		mov r30,r24
+ 1222 05fa F0E0      		ldi r31,lo8(0)
+ 1223 05fc E050      		subi r30,lo8(-(I2CTWI_recbuf))
+ 1224 05fe F040      		sbci r31,hi8(-(I2CTWI_recbuf))
+ 1225 0600 9083      		st Z,r25
+ 1226 0602 8F5F      		subi r24,lo8(-(1))
+ 1227 0604 8093 0000 		sts TWI_bufPos.2103,r24
+ 1228               	.L110:
+ 1229               	.LM183:
+ 1230 0608 2091 0000 		lds r18,TWI_bufPos.2103
+ 1231 060c 30E0      		ldi r19,lo8(0)
+ 1232 060e 8091 0000 		lds r24,TWI_msgSize
+ 1233 0612 90E0      		ldi r25,lo8(0)
+ 1234 0614 0197      		sbiw r24,1
+ 1235 0616 2817      		cp r18,r24
+ 1236 0618 3907      		cpc r19,r25
+ 1237 061a 04F4      		brge .L117
+ 1238               	.LM184:
+ 1239 061c 85EC      		ldi r24,lo8(-59)
+ 1240 061e 00C0      		rjmp .L120
+ 1241               	.L117:
+ 1242               	.LM185:
+ 1243 0620 85E8      		ldi r24,lo8(-123)
+ 1244 0622 00C0      		rjmp .L120
+ 1245               	.L123:
+ 1246               	.LM186:
+ 1247 0624 83B1      		in r24,35-32
+ 1248 0626 E091 0000 		lds r30,TWI_bufPos.2103
+ 1249 062a F0E0      		ldi r31,lo8(0)
+ 1250 062c E050      		subi r30,lo8(-(I2CTWI_recbuf))
+ 1251 062e F040      		sbci r31,hi8(-(I2CTWI_recbuf))
+ 1252 0630 8083      		st Z,r24
+ 1253               	.L121:
+ 1254               	.LM187:
+ 1255 0632 8091 0000 		lds r24,TWI_statusReg
+ 1256 0636 8160      		ori r24,lo8(1)
+ 1257 0638 8093 0000 		sts TWI_statusReg,r24
+ 1258 063c 00C0      		rjmp .L119
+ 1259               	.L122:
+ 1260               	.LM188:
+ 1261 063e 81B1      		in r24,33-32
+ 1262 0640 8093 0000 		sts TWI_TWSR_state,r24
+ 1263               	.LM189:
+ 1264 0644 85EA      		ldi r24,lo8(-91)
+ 1265 0646 00C0      		rjmp .L120
+ 1266               	.L106:
+ 1267               	.LM190:
+ 1268 0648 81B1      		in r24,33-32
+ 1269 064a 8093 0000 		sts TWI_TWSR_state,r24
+ 1270               	.L119:
+ 1271               	.LM191:
+ 1272 064e 84E9      		ldi r24,lo8(-108)
+ 1273               	.L120:
+ 1274 0650 86BF      		out 86-32,r24
+ 1275               	/* epilogue start */
+ 1276               	.LM192:
+ 1277 0652 FF91      		pop r31
+ 1278 0654 EF91      		pop r30
+ 1279 0656 9F91      		pop r25
+ 1280 0658 8F91      		pop r24
+ 1281 065a 3F91      		pop r19
+ 1282 065c 2F91      		pop r18
+ 1283 065e 0F90      		pop r0
+ 1284 0660 0FBE      		out __SREG__,r0
+ 1285 0662 0F90      		pop r0
+ 1286 0664 1F90      		pop __zero_reg__
+ 1287 0666 1895      		reti
+ 1288               	.LFE21:
+ 1290               	.global	behaviour_escape
+ 1292               	behaviour_escape:
+ 1293               	.LFB22:
+ 1294               	.LM193:
+ 1295               	/* prologue: function */
+ 1296               	/* frame size = 0 */
+ 1297               	.LM194:
+ 1298 0668 8091 0000 		lds r24,escape+5
+ 1299 066c 8430      		cpi r24,lo8(4)
+ 1300 066e 01F4      		brne .+2
+ 1301 0670 00C0      		rjmp .L129
+ 1302 0672 8530      		cpi r24,lo8(5)
+ 1303 0674 00F4      		brsh .L133
+ 1304 0676 8230      		cpi r24,lo8(2)
+ 1305 0678 01F0      		breq .L127
+ 1306 067a 8330      		cpi r24,lo8(3)
+ 1307 067c 00F0      		brlo .+2
+ 1308 067e 00C0      		rjmp .L128
+ 1309 0680 8130      		cpi r24,lo8(1)
+ 1310 0682 01F0      		breq .+2
+ 1311 0684 00C0      		rjmp .L146
+ 1312 0686 00C0      		rjmp .L155
+ 1313               	.L133:
+ 1314 0688 8630      		cpi r24,lo8(6)
+ 1315 068a 01F4      		brne .+2
+ 1316 068c 00C0      		rjmp .L131
+ 1317 068e 8630      		cpi r24,lo8(6)
+ 1318 0690 00F4      		brsh .+2
+ 1319 0692 00C0      		rjmp .L130
+ 1320 0694 8730      		cpi r24,lo8(7)
+ 1321 0696 01F0      		breq .+2
+ 1322 0698 00C0      		rjmp .L146
+ 1323 069a 00C0      		rjmp .L156
+ 1324               	.L155:
+ 1325               	.LM195:
+ 1326 069c 88E2      		ldi r24,lo8(40)
+ 1327 069e 8093 0000 		sts escape,r24
+ 1328               	.LM196:
+ 1329 06a2 8091 0000 		lds r24,escape+2
+ 1330 06a6 8C7F      		andi r24,lo8(-4)
+ 1331               	.LM197:
+ 1332 06a8 8560      		ori r24,lo8(5)
+ 1333 06aa 8093 0000 		sts escape+2,r24
+ 1334               	.LM198:
+ 1335 06ae 2091 0000 		lds r18,bump_count.2144
+ 1336 06b2 2430      		cpi r18,lo8(4)
+ 1337 06b4 00F0      		brlo .L134
+ 1338               	.LM199:
+ 1339 06b6 8CED      		ldi r24,lo8(220)
+ 1340 06b8 90E0      		ldi r25,hi8(220)
+ 1341 06ba 00C0      		rjmp .L147
+ 1342               	.L134:
+ 1343               	.LM200:
+ 1344 06bc 80EA      		ldi r24,lo8(160)
+ 1345 06be 90E0      		ldi r25,hi8(160)
+ 1346               	.L147:
+ 1347 06c0 9093 0000 		sts (escape+3)+1,r25
+ 1348 06c4 8093 0000 		sts escape+3,r24
+ 1349               	.LM201:
+ 1350 06c8 82E0      		ldi r24,lo8(2)
+ 1351 06ca 8093 0000 		sts escape+5,r24
+ 1352               	.LM202:
+ 1353 06ce 2E5F      		subi r18,lo8(-(2))
+ 1354 06d0 00C0      		rjmp .L150
+ 1355               	.L127:
+ 1356               	.LM203:
+ 1357 06d2 2091 0000 		lds r18,escape+2
+ 1358 06d6 22FD      		sbrc r18,2
+ 1359 06d8 00C0      		rjmp .L146
+ 1360               	.LM204:
+ 1361 06da 84E1      		ldi r24,lo8(20)
+ 1362 06dc 8093 0000 		sts escape,r24
+ 1363               	.LM205:
+ 1364 06e0 8091 0000 		lds r24,bump_count.2144
+ 1365 06e4 8430      		cpi r24,lo8(4)
+ 1366 06e6 00F0      		brlo .L136
+ 1367               	.LM206:
+ 1368 06e8 84E6      		ldi r24,lo8(100)
+ 1369 06ea 90E0      		ldi r25,hi8(100)
+ 1370 06ec 9093 0000 		sts (escape+3)+1,r25
+ 1371 06f0 8093 0000 		sts escape+3,r24
+ 1372               	.LM207:
+ 1373 06f4 2360      		ori r18,lo8(3)
+ 1374 06f6 2093 0000 		sts escape+2,r18
+ 1375               	.LM208:
+ 1376 06fa 1092 0000 		sts bump_count.2144,__zero_reg__
+ 1377 06fe 00C0      		rjmp .L137
+ 1378               	.L136:
+ 1379               	.LM209:
+ 1380 0700 2C7F      		andi r18,lo8(-4)
+ 1381 0702 2260      		ori r18,lo8(2)
+ 1382 0704 2093 0000 		sts escape+2,r18
+ 1383               	.LM210:
+ 1384 0708 86E4      		ldi r24,lo8(70)
+ 1385 070a 90E0      		ldi r25,hi8(70)
+ 1386 070c 9093 0000 		sts (escape+3)+1,r25
+ 1387 0710 8093 0000 		sts escape+3,r24
+ 1388               	.L137:
+ 1389               	.LM211:
+ 1390 0714 8091 0000 		lds r24,escape+2
+ 1391 0718 8860      		ori r24,lo8(8)
+ 1392 071a 8093 0000 		sts escape+2,r24
+ 1393 071e 00C0      		rjmp .L145
+ 1394               	.L128:
+ 1395               	.LM212:
+ 1396 0720 88E2      		ldi r24,lo8(40)
+ 1397 0722 8093 0000 		sts escape,r24
+ 1398               	.LM213:
+ 1399 0726 8091 0000 		lds r24,escape+2
+ 1400 072a 8C7F      		andi r24,lo8(-4)
+ 1401               	.LM214:
+ 1402 072c 8560      		ori r24,lo8(5)
+ 1403 072e 8093 0000 		sts escape+2,r24
+ 1404               	.LM215:
+ 1405 0732 2091 0000 		lds r18,bump_count.2144
+ 1406 0736 2430      		cpi r18,lo8(4)
+ 1407 0738 00F0      		brlo .L138
+ 1408               	.LM216:
+ 1409 073a 8EEB      		ldi r24,lo8(190)
+ 1410 073c 90E0      		ldi r25,hi8(190)
+ 1411 073e 00C0      		rjmp .L148
+ 1412               	.L138:
+ 1413               	.LM217:
+ 1414 0740 86E9      		ldi r24,lo8(150)
+ 1415 0742 90E0      		ldi r25,hi8(150)
+ 1416               	.L148:
+ 1417 0744 9093 0000 		sts (escape+3)+1,r25
+ 1418 0748 8093 0000 		sts escape+3,r24
+ 1419               	.LM218:
+ 1420 074c 84E0      		ldi r24,lo8(4)
+ 1421 074e 00C0      		rjmp .L151
+ 1422               	.L129:
+ 1423               	.LM219:
+ 1424 0750 9091 0000 		lds r25,escape+2
+ 1425 0754 92FD      		sbrc r25,2
+ 1426 0756 00C0      		rjmp .L146
+ 1427               	.LM220:
+ 1428 0758 84E1      		ldi r24,lo8(20)
+ 1429 075a 8093 0000 		sts escape,r24
+ 1430               	.LM221:
+ 1431 075e 9B60      		ori r25,lo8(11)
+ 1432 0760 00C0      		rjmp .L154
+ 1433               	.L130:
+ 1434               	.LM222:
+ 1435 0762 88E2      		ldi r24,lo8(40)
+ 1436 0764 8093 0000 		sts escape,r24
+ 1437               	.LM223:
+ 1438 0768 8091 0000 		lds r24,escape+2
+ 1439 076c 8C7F      		andi r24,lo8(-4)
+ 1440               	.LM224:
+ 1441 076e 8560      		ori r24,lo8(5)
+ 1442 0770 8093 0000 		sts escape+2,r24
+ 1443               	.LM225:
+ 1444 0774 2091 0000 		lds r18,bump_count.2144
+ 1445 0778 2430      		cpi r18,lo8(4)
+ 1446 077a 00F0      		brlo .L142
+ 1447               	.LM226:
+ 1448 077c 8EEB      		ldi r24,lo8(190)
+ 1449 077e 90E0      		ldi r25,hi8(190)
+ 1450 0780 00C0      		rjmp .L149
+ 1451               	.L142:
+ 1452               	.LM227:
+ 1453 0782 86E9      		ldi r24,lo8(150)
+ 1454 0784 90E0      		ldi r25,hi8(150)
+ 1455               	.L149:
+ 1456 0786 9093 0000 		sts (escape+3)+1,r25
+ 1457 078a 8093 0000 		sts escape+3,r24
+ 1458               	.LM228:
+ 1459 078e 86E0      		ldi r24,lo8(6)
+ 1460               	.L151:
+ 1461 0790 8093 0000 		sts escape+5,r24
+ 1462               	.LM229:
+ 1463 0794 2F5F      		subi r18,lo8(-(1))
+ 1464               	.L150:
+ 1465 0796 2093 0000 		sts bump_count.2144,r18
+ 1466 079a 0895      		ret
+ 1467               	.L131:
+ 1468               	.LM230:
+ 1469 079c 9091 0000 		lds r25,escape+2
+ 1470 07a0 92FD      		sbrc r25,2
+ 1471 07a2 00C0      		rjmp .L146
+ 1472               	.LM231:
+ 1473 07a4 84E1      		ldi r24,lo8(20)
+ 1474 07a6 8093 0000 		sts escape,r24
+ 1475               	.LM232:
+ 1476 07aa 9C7F      		andi r25,lo8(-4)
+ 1477               	.LM233:
+ 1478 07ac 9A60      		ori r25,lo8(10)
+ 1479               	.L154:
+ 1480 07ae 9093 0000 		sts escape+2,r25
+ 1481               	.LM234:
+ 1482 07b2 8091 0000 		lds r24,bump_count.2144
+ 1483 07b6 8430      		cpi r24,lo8(4)
+ 1484 07b8 00F0      		brlo .L144
+ 1485               	.LM235:
+ 1486 07ba 8EE6      		ldi r24,lo8(110)
+ 1487 07bc 90E0      		ldi r25,hi8(110)
+ 1488 07be 9093 0000 		sts (escape+3)+1,r25
+ 1489 07c2 8093 0000 		sts escape+3,r24
+ 1490               	.LM236:
+ 1491 07c6 1092 0000 		sts bump_count.2144,__zero_reg__
+ 1492 07ca 00C0      		rjmp .L145
+ 1493               	.L144:
+ 1494               	.LM237:
+ 1495 07cc 80E5      		ldi r24,lo8(80)
+ 1496 07ce 90E0      		ldi r25,hi8(80)
+ 1497 07d0 9093 0000 		sts (escape+3)+1,r25
+ 1498 07d4 8093 0000 		sts escape+3,r24
+ 1499               	.L145:
+ 1500               	.LM238:
+ 1501 07d8 87E0      		ldi r24,lo8(7)
+ 1502 07da 8093 0000 		sts escape+5,r24
+ 1503 07de 0895      		ret
+ 1504               	.L156:
+ 1505               	.LM239:
+ 1506 07e0 8091 0000 		lds r24,escape+2
+ 1507 07e4 8C70      		andi r24,lo8(12)
+ 1508 07e6 01F4      		brne .L146
+ 1509               	.LM240:
+ 1510 07e8 1092 0000 		sts escape+5,__zero_reg__
+ 1511               	.L146:
+ 1512 07ec 0895      		ret
+ 1513               	.LFE22:
+ 1515               	.global	bumpersStateChangedNew
+ 1517               	bumpersStateChangedNew:
+ 1518               	.LFB23:
+ 1519               	.LM241:
+ 1520               	/* prologue: function */
+ 1521               	/* frame size = 0 */
+ 1522               	.LM242:
+ 1523 07ee 8091 0000 		lds r24,bumper_left
+ 1524 07f2 9091 0000 		lds r25,bumper_right
+ 1525 07f6 8823      		tst r24
+ 1526 07f8 01F0      		breq .L158
+ 1527 07fa 9923      		tst r25
+ 1528 07fc 01F0      		breq .L159
+ 1529               	.LM243:
+ 1530 07fe 81E0      		ldi r24,lo8(1)
+ 1531 0800 00C0      		rjmp .L162
+ 1532               	.L159:
+ 1533               	.LM244:
+ 1534 0802 8091 0000 		lds r24,escape+5
+ 1535 0806 8230      		cpi r24,lo8(2)
+ 1536 0808 01F0      		breq .L160
+ 1537               	.LM245:
+ 1538 080a 83E0      		ldi r24,lo8(3)
+ 1539 080c 00C0      		rjmp .L162
+ 1540               	.L158:
+ 1541               	.LM246:
+ 1542 080e 9923      		tst r25
+ 1543 0810 01F0      		breq .L160
+ 1544               	.LM247:
+ 1545 0812 8091 0000 		lds r24,escape+5
+ 1546 0816 8230      		cpi r24,lo8(2)
+ 1547 0818 01F0      		breq .L160
+ 1548               	.LM248:
+ 1549 081a 85E0      		ldi r24,lo8(5)
+ 1550               	.L162:
+ 1551 081c 8093 0000 		sts escape+5,r24
+ 1552               	.L160:
+ 1553               	.LM249:
+ 1554 0820 8091 0000 		lds r24,stopwatches
+ 1555 0824 8F7E      		andi r24,lo8(-17)
+ 1556 0826 8093 0000 		sts stopwatches,r24
+ 1557               	/* epilogue start */
+ 1558               	.LM250:
+ 1559 082a 0895      		ret
+ 1560               	.LFE23:
+ 1562               	.global	behaviour_avoid
+ 1564               	behaviour_avoid:
+ 1565               	.LFB24:
+ 1566               	.LM251:
+ 1567               	/* prologue: function */
+ 1568               	/* frame size = 0 */
+ 1569               	.LM252:
+ 1570 082c 8091 0000 		lds r24,avoid+5
+ 1571 0830 8230      		cpi r24,lo8(2)
+ 1572 0832 01F4      		brne .+2
+ 1573 0834 00C0      		rjmp .L167
+ 1574 0836 8330      		cpi r24,lo8(3)
+ 1575 0838 00F4      		brsh .L170
+ 1576 083a 8823      		tst r24
+ 1577 083c 01F0      		breq .L165
+ 1578 083e 8130      		cpi r24,lo8(1)
+ 1579 0840 01F0      		breq .+2
+ 1580 0842 00C0      		rjmp .L179
+ 1581 0844 00C0      		rjmp .L183
+ 1582               	.L170:
+ 1583 0846 8330      		cpi r24,lo8(3)
+ 1584 0848 01F0      		breq .L168
+ 1585 084a 8530      		cpi r24,lo8(5)
+ 1586 084c 01F0      		breq .+2
+ 1587 084e 00C0      		rjmp .L179
+ 1588 0850 00C0      		rjmp .L184
+ 1589               	.L165:
+ 1590               	.LM253:
+ 1591 0852 9091 0000 		lds r25,obstacle_right
+ 1592 0856 9923      		tst r25
+ 1593 0858 01F0      		breq .L171
+ 1594 085a 8091 0000 		lds r24,obstacle_left
+ 1595 085e 8823      		tst r24
+ 1596 0860 01F0      		breq .L171
+ 1597               	.LM254:
+ 1598 0862 83E0      		ldi r24,lo8(3)
+ 1599 0864 00C0      		rjmp .L181
+ 1600               	.L171:
+ 1601               	.LM255:
+ 1602 0866 8091 0000 		lds r24,obstacle_left
+ 1603 086a 8823      		tst r24
+ 1604 086c 01F0      		breq .L172
+ 1605               	.LM256:
+ 1606 086e 82E0      		ldi r24,lo8(2)
+ 1607 0870 00C0      		rjmp .L181
+ 1608               	.L172:
+ 1609               	.LM257:
+ 1610 0872 9923      		tst r25
+ 1611 0874 01F4      		brne .+2
+ 1612 0876 00C0      		rjmp .L179
+ 1613               	.LM258:
+ 1614 0878 81E0      		ldi r24,lo8(1)
+ 1615 087a 00C0      		rjmp .L181
+ 1616               	.L168:
+ 1617               	.LM259:
+ 1618 087c 9091 0000 		lds r25,last_obstacle.2177
+ 1619 0880 9370      		andi r25,lo8(3)
+ 1620 0882 8091 0000 		lds r24,avoid+2
+ 1621 0886 8C7F      		andi r24,lo8(-4)
+ 1622 0888 892B      		or r24,r25
+ 1623 088a 8093 0000 		sts avoid+2,r24
+ 1624               	.LM260:
+ 1625 088e 84E1      		ldi r24,lo8(20)
+ 1626 0890 8093 0000 		sts avoid,r24
+ 1627               	.LM261:
+ 1628 0894 8093 0000 		sts avoid+1,r24
+ 1629               	.LM262:
+ 1630 0898 8091 0000 		lds r24,obstacle_left
+ 1631 089c 8823      		tst r24
+ 1632 089e 01F0      		breq .+2
+ 1633 08a0 00C0      		rjmp .L179
+ 1634 08a2 8091 0000 		lds r24,obstacle_right
+ 1635 08a6 8823      		tst r24
+ 1636 08a8 01F0      		breq .+2
+ 1637 08aa 00C0      		rjmp .L179
+ 1638               	.LM263:
+ 1639 08ac 8091 0000 		lds r24,obstacle_counter.2178
+ 1640 08b0 8430      		cpi r24,lo8(4)
+ 1641 08b2 00F0      		brlo .L173
+ 1642               	.LM264:
+ 1643 08b4 1092 0000 		sts obstacle_counter.2178,__zero_reg__
+ 1644               	.LM265:
+ 1645 08b8 1092 0000 		sts (stopwatches+7)+1,__zero_reg__
+ 1646 08bc 1092 0000 		sts stopwatches+7,__zero_reg__
+ 1647 08c0 00C0      		rjmp .L174
+ 1648               	.L173:
+ 1649               	.LM266:
+ 1650 08c2 80E9      		ldi r24,lo8(400)
+ 1651 08c4 91E0      		ldi r25,hi8(400)
+ 1652 08c6 9093 0000 		sts (stopwatches+7)+1,r25
+ 1653 08ca 8093 0000 		sts stopwatches+7,r24
+ 1654               	.L174:
+ 1655               	.LM267:
+ 1656 08ce 8091 0000 		lds r24,stopwatches
+ 1657 08d2 8860      		ori r24,lo8(8)
+ 1658 08d4 8093 0000 		sts stopwatches,r24
+ 1659               	.LM268:
+ 1660 08d8 85E0      		ldi r24,lo8(5)
+ 1661               	.L181:
+ 1662 08da 8093 0000 		sts avoid+5,r24
+ 1663 08de 0895      		ret
+ 1664               	.L183:
+ 1665               	.LM269:
+ 1666 08e0 8091 0000 		lds r24,avoid+2
+ 1667 08e4 8C7F      		andi r24,lo8(-4)
+ 1668 08e6 8093 0000 		sts avoid+2,r24
+ 1669               	.LM270:
+ 1670 08ea 84E1      		ldi r24,lo8(20)
+ 1671 08ec 8093 0000 		sts avoid,r24
+ 1672               	.LM271:
+ 1673 08f0 88E2      		ldi r24,lo8(40)
+ 1674 08f2 8093 0000 		sts avoid+1,r24
+ 1675               	.LM272:
+ 1676 08f6 8091 0000 		lds r24,obstacle_right
+ 1677 08fa 8823      		tst r24
+ 1678 08fc 01F0      		breq .L175
+ 1679 08fe 8091 0000 		lds r24,obstacle_left
+ 1680 0902 8823      		tst r24
+ 1681 0904 01F0      		breq .L176
+ 1682               	.LM273:
+ 1683 0906 83E0      		ldi r24,lo8(3)
+ 1684 0908 00C0      		rjmp .L180
+ 1685               	.L175:
+ 1686               	.LM274:
+ 1687 090a 84EF      		ldi r24,lo8(500)
+ 1688 090c 91E0      		ldi r25,hi8(500)
+ 1689 090e 9093 0000 		sts (stopwatches+7)+1,r25
+ 1690 0912 8093 0000 		sts stopwatches+7,r24
+ 1691               	.LM275:
+ 1692 0916 8091 0000 		lds r24,stopwatches
+ 1693 091a 8860      		ori r24,lo8(8)
+ 1694 091c 8093 0000 		sts stopwatches,r24
+ 1695               	.LM276:
+ 1696 0920 85E0      		ldi r24,lo8(5)
+ 1697               	.L180:
+ 1698 0922 8093 0000 		sts avoid+5,r24
+ 1699               	.L176:
+ 1700               	.LM277:
+ 1701 0926 83E0      		ldi r24,lo8(3)
+ 1702 0928 00C0      		rjmp .L182
+ 1703               	.L167:
+ 1704               	.LM278:
+ 1705 092a 8091 0000 		lds r24,avoid+2
+ 1706 092e 8C7F      		andi r24,lo8(-4)
+ 1707 0930 8093 0000 		sts avoid+2,r24
+ 1708               	.LM279:
+ 1709 0934 88E2      		ldi r24,lo8(40)
+ 1710 0936 8093 0000 		sts avoid,r24
+ 1711               	.LM280:
+ 1712 093a 84E1      		ldi r24,lo8(20)
+ 1713 093c 8093 0000 		sts avoid+1,r24
+ 1714               	.LM281:
+ 1715 0940 8091 0000 		lds r24,obstacle_right
+ 1716 0944 8823      		tst r24
+ 1717 0946 01F0      		breq .L177
+ 1718 0948 8091 0000 		lds r24,obstacle_left
+ 1719 094c 8823      		tst r24
+ 1720 094e 01F0      		breq .L177
+ 1721               	.LM282:
+ 1722 0950 83E0      		ldi r24,lo8(3)
+ 1723 0952 8093 0000 		sts avoid+5,r24
+ 1724               	.L177:
+ 1725               	.LM283:
+ 1726 0956 8091 0000 		lds r24,obstacle_left
+ 1727 095a 8823      		tst r24
+ 1728 095c 01F4      		brne .L178
+ 1729               	.LM284:
+ 1730 095e 84EF      		ldi r24,lo8(500)
+ 1731 0960 91E0      		ldi r25,hi8(500)
+ 1732 0962 9093 0000 		sts (stopwatches+7)+1,r25
+ 1733 0966 8093 0000 		sts stopwatches+7,r24
+ 1734               	.LM285:
+ 1735 096a 8091 0000 		lds r24,stopwatches
+ 1736 096e 8860      		ori r24,lo8(8)
+ 1737 0970 8093 0000 		sts stopwatches,r24
+ 1738               	.LM286:
+ 1739 0974 85E0      		ldi r24,lo8(5)
+ 1740 0976 8093 0000 		sts avoid+5,r24
+ 1741               	.L178:
+ 1742               	.LM287:
+ 1743 097a 82E0      		ldi r24,lo8(2)
+ 1744               	.L182:
+ 1745 097c 8093 0000 		sts last_obstacle.2177,r24
+ 1746               	.LM288:
+ 1747 0980 8091 0000 		lds r24,obstacle_counter.2178
+ 1748 0984 8F5F      		subi r24,lo8(-(1))
+ 1749 0986 8093 0000 		sts obstacle_counter.2178,r24
+ 1750 098a 0895      		ret
+ 1751               	.L184:
+ 1752               	.LM289:
+ 1753 098c 8091 0000 		lds r24,stopwatches+7
+ 1754 0990 9091 0000 		lds r25,(stopwatches+7)+1
+ 1755 0994 895E      		subi r24,lo8(1001)
+ 1756 0996 9340      		sbci r25,hi8(1001)
+ 1757 0998 00F0      		brlo .L179
+ 1758               	.LM290:
+ 1759 099a 8091 0000 		lds r24,stopwatches
+ 1760 099e 877F      		andi r24,lo8(-9)
+ 1761 09a0 8093 0000 		sts stopwatches,r24
+ 1762               	.LM291:
+ 1763 09a4 1092 0000 		sts (stopwatches+7)+1,__zero_reg__
+ 1764 09a8 1092 0000 		sts stopwatches+7,__zero_reg__
+ 1765               	.LM292:
+ 1766 09ac 1092 0000 		sts avoid+5,__zero_reg__
+ 1767               	.L179:
+ 1768 09b0 0895      		ret
+ 1769               	.LFE24:
+ 1771               	.global	resetVariables
+ 1773               	resetVariables:
+ 1774               	.LFB26:
+ 1775               	.LM293:
+ 1776               	/* prologue: function */
+ 1777               	/* frame size = 0 */
+ 1778               	.LM294:
+ 1779 09b2 1092 0000 		sts kreuzungDetektiert,__zero_reg__
+ 1780               	.LM295:
+ 1781 09b6 1092 0000 		sts RechtsUndLinksAbbiegungErkannt,__zero_reg__
+ 1782               	.LM296:
+ 1783 09ba 1092 0000 		sts KreuzungsMitteErkannt,__zero_reg__
+ 1784               	.LM297:
+ 1785 09be 1092 0000 		sts carryOutMission+5,__zero_reg__
+ 1786               	/* epilogue start */
+ 1787               	.LM298:
+ 1788 09c2 0895      		ret
+ 1789               	.LFE26:
+ 1791               	.global	behaviour_carryOutMission
+ 1793               	behaviour_carryOutMission:
+ 1794               	.LFB27:
+ 1795               	.LM299:
+ 1796               	/* prologue: function */
+ 1797               	/* frame size = 0 */
+ 1798               	/* epilogue start */
+ 1799               	.LM300:
+ 1800 09c4 0895      		ret
+ 1801               	.LFE27:
+ 1803               	.global	entscheideWohinGefahrenWerdenSoll
+ 1805               	entscheideWohinGefahrenWerdenSoll:
+ 1806               	.LFB28:
+ 1807               	.LM301:
+ 1808               	/* prologue: function */
+ 1809               	/* frame size = 0 */
+ 1810               	.LM302:
+ 1811 09c6 8091 0000 		lds r24,kreuzungDetektiert
+ 1812 09ca 8330      		cpi r24,lo8(3)
+ 1813 09cc 01F0      		breq .L195
+ 1814 09ce 8430      		cpi r24,lo8(4)
+ 1815 09d0 00F4      		brsh .L196
+ 1816 09d2 8130      		cpi r24,lo8(1)
+ 1817 09d4 01F0      		breq .L191
+ 1818 09d6 8230      		cpi r24,lo8(2)
+ 1819 09d8 01F4      		brne .L190
+ 1820 09da 00C0      		rjmp .L195
+ 1821               	.L196:
+ 1822 09dc 8430      		cpi r24,lo8(4)
+ 1823 09de 01F0      		breq .L194
+ 1824 09e0 8530      		cpi r24,lo8(5)
+ 1825 09e2 01F4      		brne .L190
+ 1826 09e4 00C0      		rjmp .L195
+ 1827               	.L191:
+ 1828               	.LM303:
+ 1829 09e6 84EB      		ldi r24,lo8(180)
+ 1830 09e8 90E0      		ldi r25,hi8(180)
+ 1831 09ea 9093 0000 		sts (carryOutMission+3)+1,r25
+ 1832 09ee 8093 0000 		sts carryOutMission+3,r24
+ 1833               	.LM304:
+ 1834 09f2 8091 0000 		lds r24,carryOutMission+2
+ 1835               	.LM305:
+ 1836 09f6 8B60      		ori r24,lo8(11)
+ 1837 09f8 8093 0000 		sts carryOutMission+2,r24
+ 1838               	.LM306:
+ 1839 09fc 84E0      		ldi r24,lo8(4)
+ 1840 09fe 00C0      		rjmp .L199
+ 1841               	.L194:
+ 1842               	.LM307:
+ 1843 0a00 88E2      		ldi r24,lo8(40)
+ 1844 0a02 90E0      		ldi r25,hi8(40)
+ 1845 0a04 9093 0000 		sts (carryOutMission+3)+1,r25
+ 1846 0a08 8093 0000 		sts carryOutMission+3,r24
+ 1847               	.LM308:
+ 1848 0a0c 8091 0000 		lds r24,carryOutMission+2
+ 1849 0a10 8C7F      		andi r24,lo8(-4)
+ 1850               	.LM309:
+ 1851 0a12 8460      		ori r24,lo8(4)
+ 1852 0a14 8093 0000 		sts carryOutMission+2,r24
+ 1853               	.LM310:
+ 1854 0a18 83E0      		ldi r24,lo8(3)
+ 1855 0a1a 00C0      		rjmp .L199
+ 1856               	.L195:
+ 1857               	.LM311:
+ 1858 0a1c 8AE5      		ldi r24,lo8(90)
+ 1859 0a1e 90E0      		ldi r25,hi8(90)
+ 1860 0a20 9093 0000 		sts (carryOutMission+3)+1,r25
+ 1861 0a24 8093 0000 		sts carryOutMission+3,r24
+ 1862               	.LM312:
+ 1863 0a28 8091 0000 		lds r24,carryOutMission+2
+ 1864               	.LM313:
+ 1865 0a2c 8B60      		ori r24,lo8(11)
+ 1866 0a2e 00C0      		rjmp .L200
+ 1867               	.L190:
+ 1868               	.LM314:
+ 1869 0a30 1092 0000 		sts (carryOutMission+3)+1,__zero_reg__
+ 1870 0a34 1092 0000 		sts carryOutMission+3,__zero_reg__
+ 1871               	.LM315:
+ 1872 0a38 8091 0000 		lds r24,carryOutMission+2
+ 1873 0a3c 8360      		ori r24,lo8(3)
+ 1874               	.LM316:
+ 1875 0a3e 837F      		andi r24,lo8(-13)
+ 1876               	.L200:
+ 1877 0a40 8093 0000 		sts carryOutMission+2,r24
+ 1878               	.LM317:
+ 1879 0a44 81E0      		ldi r24,lo8(1)
+ 1880               	.L199:
+ 1881 0a46 8093 0000 		sts carryOutMission+5,r24
+ 1882 0a4a 0895      		ret
+ 1883               	.LFE28:
+ 1885               	.global	searchForTwoLines
+ 1887               	searchForTwoLines:
+ 1888               	.LFB30:
+ 1889               	.LM318:
+ 1890               	.LVL104:
+ 1891               	/* prologue: function */
+ 1892               	/* frame size = 0 */
+ 1893 0a4c FC01      		movw r30,r24
+ 1894               	.LM319:
+ 1895 0a4e 8091 0000 		lds r24,currentFollowLineArrayValue
+ 1896               	.LVL105:
+ 1897 0a52 90E0      		ldi r25,lo8(0)
+ 1898               	.LVL106:
+ 1899 0a54 20E0      		ldi r18,lo8(0)
+ 1900 0a56 30E0      		ldi r19,hi8(0)
+ 1901               	.LVL107:
+ 1902 0a58 60E0      		ldi r22,lo8(0)
+ 1903 0a5a 70E0      		ldi r23,hi8(0)
+ 1904               	.LVL108:
+ 1905               	.L207:
+ 1906               	.LM320:
+ 1907 0a5c AC01      		movw r20,r24
+ 1908 0a5e 4170      		andi r20,lo8(1)
+ 1909 0a60 5070      		andi r21,hi8(1)
+ 1910               	.LM321:
+ 1911 0a62 9595      		asr r25
+ 1912 0a64 8795      		ror r24
+ 1913               	.LM322:
+ 1914 0a66 2230      		cpi r18,2
+ 1915 0a68 3105      		cpc r19,__zero_reg__
+ 1916 0a6a 01F0      		breq .L204
+ 1917 0a6c 2330      		cpi r18,3
+ 1918 0a6e 3105      		cpc r19,__zero_reg__
+ 1919 0a70 01F0      		breq .L205
+ 1920 0a72 2130      		cpi r18,1
+ 1921 0a74 3105      		cpc r19,__zero_reg__
+ 1922 0a76 01F0      		breq .L203
+ 1923               	.LM323:
+ 1924 0a78 4130      		cpi r20,1
+ 1925 0a7a 5105      		cpc r21,__zero_reg__
+ 1926 0a7c 01F4      		brne .L206
+ 1927 0a7e 21E0      		ldi r18,lo8(1)
+ 1928 0a80 30E0      		ldi r19,hi8(1)
+ 1929 0a82 00C0      		rjmp .L206
+ 1930               	.L203:
+ 1931               	.LM324:
+ 1932 0a84 452B      		or r20,r21
+ 1933 0a86 01F4      		brne .L206
+ 1934               	.LM325:
+ 1935 0a88 7183      		std Z+1,r23
+ 1936 0a8a 6083      		st Z,r22
+ 1937 0a8c 22E0      		ldi r18,lo8(2)
+ 1938 0a8e 30E0      		ldi r19,hi8(2)
+ 1939 0a90 00C0      		rjmp .L206
+ 1940               	.L204:
+ 1941               	.LM326:
+ 1942 0a92 4130      		cpi r20,1
+ 1943 0a94 5105      		cpc r21,__zero_reg__
+ 1944 0a96 01F4      		brne .L206
+ 1945 0a98 23E0      		ldi r18,lo8(3)
+ 1946 0a9a 30E0      		ldi r19,hi8(3)
+ 1947               	.L206:
+ 1948               	.LM327:
+ 1949 0a9c 6F5F      		subi r22,lo8(-(1))
+ 1950 0a9e 7F4F      		sbci r23,hi8(-(1))
+ 1951 0aa0 6830      		cpi r22,8
+ 1952 0aa2 7105      		cpc r23,__zero_reg__
+ 1953 0aa4 01F4      		brne .L207
+ 1954               	.L205:
+ 1955               	.LM328:
+ 1956 0aa6 C901      		movw r24,r18
+ 1957               	.LVL109:
+ 1958               	/* epilogue start */
+ 1959 0aa8 0895      		ret
+ 1960               	.LFE30:
+ 1962               	.global	behaviour_cruise
+ 1964               	behaviour_cruise:
+ 1965               	.LFB33:
+ 1966               	.LM329:
+ 1967               	/* prologue: function */
+ 1968               	/* frame size = 0 */
+ 1969               	.LM330:
+ 1970 0aaa 8091 0000 		lds r24,cruise+5
+ 1971 0aae 8823      		tst r24
+ 1972 0ab0 01F0      		breq .L212
+ 1973               	.LM331:
+ 1974 0ab2 8091 0000 		lds r24,stopwatches
+ 1975 0ab6 84FD      		sbrc r24,4
+ 1976 0ab8 00C0      		rjmp .L212
+ 1977               	.LM332:
+ 1978 0aba 80E0      		ldi r24,lo8(__c.2378)
+ 1979 0abc 90E0      		ldi r25,hi8(__c.2378)
+ 1980 0abe 0E94 0000 		call writeNStringP
+ 1981               	.LM333:
+ 1982 0ac2 88E2      		ldi r24,lo8(40)
+ 1983 0ac4 8093 0000 		sts speed,r24
+ 1984               	.LM334:
+ 1985 0ac8 1092 0000 		sts (stopwatches+9)+1,__zero_reg__
+ 1986 0acc 1092 0000 		sts stopwatches+9,__zero_reg__
+ 1987               	.LM335:
+ 1988 0ad0 8091 0000 		lds r24,stopwatches
+ 1989 0ad4 8061      		ori r24,lo8(16)
+ 1990 0ad6 8093 0000 		sts stopwatches,r24
+ 1991               	.L212:
+ 1992 0ada 0895      		ret
+ 1993               	.LFE33:
+ 1995               	.global	task_EvaluateMission
+ 1997               	task_EvaluateMission:
+ 1998               	.LFB29:
+ 1999               	.LM336:
+ 2000               	/* prologue: function */
+ 2001               	/* frame size = 0 */
+ 2002               	.LM337:
+ 2003 0adc 8091 0000 		lds r24,stopwatches+1
+ 2004 0ae0 9091 0000 		lds r25,(stopwatches+1)+1
+ 2005 0ae4 895E      		subi r24,lo8(1001)
+ 2006 0ae6 9340      		sbci r25,hi8(1001)
+ 2007 0ae8 00F0      		brlo .L214
+ 2008               	.LBB56:
+ 2009               	.LBB57:
+ 2010               	.LM338:
+ 2011 0aea 1092 0000 		sts kreuzungDetektiert,__zero_reg__
+ 2012               	.LM339:
+ 2013 0aee 1092 0000 		sts RechtsUndLinksAbbiegungErkannt,__zero_reg__
+ 2014               	.LM340:
+ 2015 0af2 1092 0000 		sts KreuzungsMitteErkannt,__zero_reg__
+ 2016 0af6 00C0      		rjmp .L231
+ 2017               	.L214:
+ 2018               	.LBE57:
+ 2019               	.LBE56:
+ 2020               	.LM341:
+ 2021 0af8 8091 0000 		lds r24,kreuzungDetektiert
+ 2022 0afc 8823      		tst r24
+ 2023 0afe 01F0      		breq .L216
+ 2024               	.LM342:
+ 2025 0b00 8091 0000 		lds r24,carryOutMission+2
+ 2026 0b04 8C70      		andi r24,lo8(12)
+ 2027 0b06 01F0      		breq .+2
+ 2028 0b08 00C0      		rjmp .L227
+ 2029               	.L231:
+ 2030               	.LM343:
+ 2031 0b0a 1092 0000 		sts carryOutMission+5,__zero_reg__
+ 2032 0b0e 0895      		ret
+ 2033               	.L216:
+ 2034               	.LM344:
+ 2035 0b10 4091 0000 		lds r20,RechtsUndLinksAbbiegungErkannt
+ 2036 0b14 4130      		cpi r20,lo8(1)
+ 2037 0b16 01F4      		brne .L217
+ 2038               	.LM345:
+ 2039 0b18 8091 0000 		lds r24,KreuzungsMitteErkannt
+ 2040 0b1c 9091 0000 		lds r25,lastFollowLineArrayValue
+ 2041 0b20 8823      		tst r24
+ 2042 0b22 01F4      		brne .L218
+ 2043               	.LM346:
+ 2044 0b24 292F      		mov r18,r25
+ 2045 0b26 30E0      		ldi r19,lo8(0)
+ 2046 0b28 C901      		movw r24,r18
+ 2047 0b2a 8073      		andi r24,lo8(48)
+ 2048 0b2c 9070      		andi r25,hi8(48)
+ 2049 0b2e 892B      		or r24,r25
+ 2050 0b30 01F0      		breq .+2
+ 2051 0b32 00C0      		rjmp .L219
+ 2052 0b34 2C70      		andi r18,lo8(12)
+ 2053 0b36 3070      		andi r19,hi8(12)
+ 2054 0b38 232B      		or r18,r19
+ 2055 0b3a 01F0      		breq .+2
+ 2056 0b3c 00C0      		rjmp .L219
+ 2057 0b3e 00C0      		rjmp .L232
+ 2058               	.L218:
+ 2059               	.LM347:
+ 2060 0b40 892F      		mov r24,r25
+ 2061 0b42 90E0      		ldi r25,lo8(0)
+ 2062 0b44 85FF      		sbrs r24,5
+ 2063 0b46 00C0      		rjmp .L219
+ 2064 0b48 84FF      		sbrs r24,4
+ 2065 0b4a 00C0      		rjmp .L221
+ 2066 0b4c 83FF      		sbrs r24,3
+ 2067 0b4e 00C0      		rjmp .L221
+ 2068 0b50 82FF      		sbrs r24,2
+ 2069 0b52 00C0      		rjmp .L221
+ 2070               	.LM348:
+ 2071 0b54 83E0      		ldi r24,lo8(3)
+ 2072 0b56 8093 0000 		sts kreuzungDetektiert,r24
+ 2073               	.LM349:
+ 2074 0b5a 80E0      		ldi r24,lo8(__c.2243)
+ 2075 0b5c 90E0      		ldi r25,hi8(__c.2243)
+ 2076 0b5e 00C0      		rjmp .L230
+ 2077               	.L221:
+ 2078               	.LM350:
+ 2079 0b60 82FF      		sbrs r24,2
+ 2080 0b62 00C0      		rjmp .L219
+ 2081 0b64 8871      		andi r24,lo8(24)
+ 2082 0b66 9070      		andi r25,hi8(24)
+ 2083 0b68 892B      		or r24,r25
+ 2084 0b6a 01F0      		breq .+2
+ 2085 0b6c 00C0      		rjmp .L219
+ 2086 0b6e 00C0      		rjmp .L233
+ 2087               	.L217:
+ 2088               	.LM351:
+ 2089 0b70 6091 0000 		lds r22,lastFollowLineArrayValue
+ 2090 0b74 862F      		mov r24,r22
+ 2091 0b76 90E0      		ldi r25,lo8(0)
+ 2092 0b78 AC01      		movw r20,r24
+ 2093 0b7a 4072      		andi r20,lo8(32)
+ 2094 0b7c 5070      		andi r21,hi8(32)
+ 2095 0b7e 65FF      		sbrs r22,5
+ 2096 0b80 00C0      		rjmp .L223
+ 2097 0b82 64FF      		sbrs r22,4
+ 2098 0b84 00C0      		rjmp .L223
+ 2099 0b86 63FF      		sbrs r22,3
+ 2100 0b88 00C0      		rjmp .L223
+ 2101 0b8a 62FF      		sbrs r22,2
+ 2102 0b8c 00C0      		rjmp .L223
+ 2103               	.LM352:
+ 2104 0b8e 81E0      		ldi r24,lo8(1)
+ 2105 0b90 8093 0000 		sts kreuzungDetektiert,r24
+ 2106               	.LM353:
+ 2107 0b94 80E0      		ldi r24,lo8(__c.2247)
+ 2108 0b96 90E0      		ldi r25,hi8(__c.2247)
+ 2109               	.L230:
+ 2110 0b98 0E94 0000 		call writeNStringP
+ 2111 0b9c 00C0      		rjmp .L219
+ 2112               	.L223:
+ 2113               	.LM354:
+ 2114 0b9e 9C01      		movw r18,r24
+ 2115 0ba0 2074      		andi r18,lo8(64)
+ 2116 0ba2 3070      		andi r19,hi8(64)
+ 2117 0ba4 86FF      		sbrs r24,6
+ 2118 0ba6 00C0      		rjmp .L224
+ 2119 0ba8 4115      		cp r20,__zero_reg__
+ 2120 0baa 5105      		cpc r21,__zero_reg__
+ 2121 0bac 01F0      		breq .L224
+ 2122 0bae 82FF      		sbrs r24,2
+ 2123 0bb0 00C0      		rjmp .L224
+ 2124 0bb2 81FF      		sbrs r24,1
+ 2125 0bb4 00C0      		rjmp .L224
+ 2126               	.LM355:
+ 2127 0bb6 80E0      		ldi r24,lo8(__c.2249)
+ 2128 0bb8 90E0      		ldi r25,hi8(__c.2249)
+ 2129 0bba 0E94 0000 		call writeNStringP
+ 2130               	.LM356:
+ 2131 0bbe 86E0      		ldi r24,lo8(6)
+ 2132 0bc0 8093 0000 		sts carryOutMission+5,r24
+ 2133               	.LM357:
+ 2134 0bc4 8091 0000 		lds r24,carryOutMission+2
+ 2135 0bc8 8C7F      		andi r24,lo8(-4)
+ 2136 0bca 8093 0000 		sts carryOutMission+2,r24
+ 2137               	.LM358:
+ 2138 0bce 88E2      		ldi r24,lo8(40)
+ 2139 0bd0 8093 0000 		sts carryOutMission,r24
+ 2140               	.LM359:
+ 2141 0bd4 8093 0000 		sts carryOutMission+1,r24
+ 2142               	.LM360:
+ 2143 0bd8 81E0      		ldi r24,lo8(1)
+ 2144 0bda 8093 0000 		sts RechtsUndLinksAbbiegungErkannt,r24
+ 2145 0bde 00C0      		rjmp .L219
+ 2146               	.L224:
+ 2147               	.LM361:
+ 2148 0be0 67FF      		sbrs r22,7
+ 2149 0be2 00C0      		rjmp .L225
+ 2150 0be4 232B      		or r18,r19
+ 2151 0be6 01F0      		breq .L225
+ 2152 0be8 452B      		or r20,r21
+ 2153 0bea 01F0      		breq .L225
+ 2154               	.LM362:
+ 2155 0bec 85E0      		ldi r24,lo8(5)
+ 2156 0bee 8093 0000 		sts kreuzungDetektiert,r24
+ 2157               	.LM363:
+ 2158 0bf2 80E0      		ldi r24,lo8(__c.2251)
+ 2159 0bf4 90E0      		ldi r25,hi8(__c.2251)
+ 2160 0bf6 00C0      		rjmp .L230
+ 2161               	.L225:
+ 2162               	.LM364:
+ 2163 0bf8 80FF      		sbrs r24,0
+ 2164 0bfa 00C0      		rjmp .L226
+ 2165 0bfc 81FF      		sbrs r24,1
+ 2166 0bfe 00C0      		rjmp .L226
+ 2167 0c00 82FF      		sbrs r24,2
+ 2168 0c02 00C0      		rjmp .L226
+ 2169               	.LM365:
+ 2170 0c04 84E0      		ldi r24,lo8(4)
+ 2171 0c06 8093 0000 		sts kreuzungDetektiert,r24
+ 2172               	.LM366:
+ 2173 0c0a 80E0      		ldi r24,lo8(__c.2253)
+ 2174 0c0c 90E0      		ldi r25,hi8(__c.2253)
+ 2175 0c0e 00C0      		rjmp .L230
+ 2176               	.L226:
+ 2177               	.LBB58:
+ 2178               	.LBB59:
+ 2179               	.LM367:
+ 2180 0c10 1092 0000 		sts kreuzungDetektiert,__zero_reg__
+ 2181               	.LM368:
+ 2182 0c14 1092 0000 		sts RechtsUndLinksAbbiegungErkannt,__zero_reg__
+ 2183               	.LM369:
+ 2184 0c18 1092 0000 		sts KreuzungsMitteErkannt,__zero_reg__
+ 2185               	.LM370:
+ 2186 0c1c 1092 0000 		sts carryOutMission+5,__zero_reg__
+ 2187               	.L219:
+ 2188               	.LBE59:
+ 2189               	.LBE58:
+ 2190               	.LM371:
+ 2191 0c20 8091 0000 		lds r24,kreuzungDetektiert
+ 2192 0c24 8823      		tst r24
+ 2193 0c26 01F0      		breq .L227
+ 2194               	.LM372:
+ 2195 0c28 0E94 0000 		call entscheideWohinGefahrenWerdenSoll
+ 2196 0c2c 0895      		ret
+ 2197               	.L232:
+ 2198               	.LM373:
+ 2199 0c2e 4093 0000 		sts KreuzungsMitteErkannt,r20
+ 2200 0c32 00C0      		rjmp .L219
+ 2201               	.L233:
+ 2202               	.LM374:
+ 2203 0c34 82E0      		ldi r24,lo8(2)
+ 2204 0c36 8093 0000 		sts kreuzungDetektiert,r24
+ 2205               	.LM375:
+ 2206 0c3a 80E0      		ldi r24,lo8(__c.2245)
+ 2207 0c3c 90E0      		ldi r25,hi8(__c.2245)
+ 2208 0c3e 00C0      		rjmp .L230
+ 2209               	.L227:
+ 2210 0c40 0895      		ret
+ 2211               	.LFE29:
+ 2213               	.global	moveCommand
+ 2215               	moveCommand:
+ 2216               	.LFB34:
+ 2217               	.LM376:
+ 2218               	.LVL110:
+ 2219 0c42 1F93      		push r17
+ 2220 0c44 CF93      		push r28
+ 2221 0c46 DF93      		push r29
+ 2222               	/* prologue: function */
+ 2223               	/* frame size = 0 */
+ 2224 0c48 EC01      		movw r28,r24
+ 2225               	.LM377:
+ 2226 0c4a 4B81      		ldd r20,Y+3
+ 2227 0c4c 5C81      		ldd r21,Y+4
+ 2228 0c4e 6A81      		ldd r22,Y+2
+ 2229 0c50 4115      		cp r20,__zero_reg__
+ 2230 0c52 5105      		cpc r21,__zero_reg__
+ 2231 0c54 01F0      		breq .L235
+ 2232               	.LVL111:
+ 2233               	.LM378:
+ 2234 0c56 63FF      		sbrs r22,3
+ 2235 0c58 00C0      		rjmp .L236
+ 2236               	.LM379:
+ 2237 0c5a 6370      		andi r22,lo8(3)
+ 2238 0c5c 8881      		ld r24,Y
+ 2239 0c5e 20E0      		ldi r18,lo8(0)
+ 2240 0c60 0E94 0000 		call rotate
+ 2241 0c64 00C0      		rjmp .L237
+ 2242               	.LVL112:
+ 2243               	.L236:
+ 2244               	.LM380:
+ 2245 0c66 62FF      		sbrs r22,2
+ 2246 0c68 00C0      		rjmp .L237
+ 2247               	.LM381:
+ 2248 0c6a 162F      		mov r17,r22
+ 2249 0c6c 1370      		andi r17,lo8(3)
+ 2250 0c6e BA01      		movw r22,r20
+ 2251 0c70 80E0      		ldi r24,lo8(0)
+ 2252 0c72 90E0      		ldi r25,hi8(0)
+ 2253 0c74 0E94 0000 		call __floatunsisf
+ 2254 0c78 2FE8      		ldi r18,lo8(0x3e75c28f)
+ 2255 0c7a 32EC      		ldi r19,hi8(0x3e75c28f)
+ 2256 0c7c 45E7      		ldi r20,hlo8(0x3e75c28f)
+ 2257 0c7e 5EE3      		ldi r21,hhi8(0x3e75c28f)
+ 2258 0c80 0E94 0000 		call __divsf3
+ 2259 0c84 0E94 0000 		call __fixunssfsi
+ 2260 0c88 9B01      		movw r18,r22
+ 2261 0c8a AC01      		movw r20,r24
+ 2262 0c8c 8881      		ld r24,Y
+ 2263 0c8e 612F      		mov r22,r17
+ 2264 0c90 A901      		movw r20,r18
+ 2265 0c92 20E0      		ldi r18,lo8(0)
+ 2266 0c94 0E94 0000 		call move
+ 2267               	.LVL113:
+ 2268               	.L237:
+ 2269               	.LM382:
+ 2270 0c98 1C82      		std Y+4,__zero_reg__
+ 2271 0c9a 1B82      		std Y+3,__zero_reg__
+ 2272 0c9c 00C0      		rjmp .L240
+ 2273               	.L235:
+ 2274               	.LM383:
+ 2275 0c9e 862F      		mov r24,r22
+ 2276 0ca0 8C70      		andi r24,lo8(12)
+ 2277 0ca2 01F4      		brne .L239
+ 2278               	.LM384:
+ 2279 0ca4 862F      		mov r24,r22
+ 2280 0ca6 8370      		andi r24,lo8(3)
+ 2281 0ca8 0E94 0000 		call changeDirection
+ 2282               	.LM385:
+ 2283 0cac 8881      		ld r24,Y
+ 2284 0cae 6981      		ldd r22,Y+1
+ 2285 0cb0 0E94 0000 		call moveAtSpeed
+ 2286 0cb4 00C0      		rjmp .L240
+ 2287               	.L239:
+ 2288               	.LM386:
+ 2289 0cb6 0E94 0000 		call isMovementComplete
+ 2290 0cba 8823      		tst r24
+ 2291 0cbc 01F0      		breq .L240
+ 2292               	.LM387:
+ 2293 0cbe 8A81      		ldd r24,Y+2
+ 2294               	.LM388:
+ 2295 0cc0 837F      		andi r24,lo8(-13)
+ 2296 0cc2 8A83      		std Y+2,r24
+ 2297               	.LVL114:
+ 2298               	.L240:
+ 2299               	/* epilogue start */
+ 2300               	.LM389:
+ 2301 0cc4 DF91      		pop r29
+ 2302 0cc6 CF91      		pop r28
+ 2303               	.LVL115:
+ 2304 0cc8 1F91      		pop r17
+ 2305 0cca 0895      		ret
+ 2306               	.LFE34:
+ 2308               	.global	behaviour_followLine
+ 2310               	behaviour_followLine:
+ 2311               	.LFB31:
+ 2312               	.LM390:
+ 2313 0ccc 0F93      		push r16
+ 2314 0cce 1F93      		push r17
+ 2315 0cd0 DF93      		push r29
+ 2316 0cd2 CF93      		push r28
+ 2317 0cd4 00D0      		rcall .
+ 2318 0cd6 CDB7      		in r28,__SP_L__
+ 2319 0cd8 DEB7      		in r29,__SP_H__
+ 2320               	/* prologue: function */
+ 2321               	/* frame size = 2 */
+ 2322               	.LM391:
+ 2323 0cda 8091 0000 		lds r24,currentFollowLineArrayValue
+ 2324 0cde 8823      		tst r24
+ 2325 0ce0 01F0      		breq .L242
+ 2326               	.LM392:
+ 2327 0ce2 81E0      		ldi r24,lo8(1)
+ 2328 0ce4 8093 0000 		sts followLine+5,r24
+ 2329 0ce8 00C0      		rjmp .L243
+ 2330               	.L242:
+ 2331               	.LM393:
+ 2332 0cea 1092 0000 		sts followLine+5,__zero_reg__
+ 2333               	.L243:
+ 2334               	.LM394:
+ 2335 0cee 8091 0000 		lds r24,followLine+5
+ 2336 0cf2 8130      		cpi r24,lo8(1)
+ 2337 0cf4 01F0      		breq .+2
+ 2338 0cf6 00C0      		rjmp .L254
+ 2339               	.LBB60:
+ 2340               	.LM395:
+ 2341 0cf8 8091 0000 		lds r24,followLine+2
+ 2342 0cfc 8C7F      		andi r24,lo8(-4)
+ 2343 0cfe 8093 0000 		sts followLine+2,r24
+ 2344               	.LM396:
+ 2345 0d02 88E2      		ldi r24,lo8(40)
+ 2346 0d04 8093 0000 		sts followLine,r24
+ 2347               	.LM397:
+ 2348 0d08 8093 0000 		sts followLine+1,r24
+ 2349               	.LM398:
+ 2350 0d0c CE01      		movw r24,r28
+ 2351 0d0e 0196      		adiw r24,1
+ 2352 0d10 0E94 0000 		call searchForTwoLines
+ 2353 0d14 8C01      		movw r16,r24
+ 2354               	.LVL116:
+ 2355               	.LM399:
+ 2356 0d16 8330      		cpi r24,3
+ 2357 0d18 9105      		cpc r25,__zero_reg__
+ 2358 0d1a 01F4      		brne .L246
+ 2359               	.LVL117:
+ 2360               	.LM400:
+ 2361 0d1c 80E0      		ldi r24,lo8(__c.2324)
+ 2362 0d1e 90E0      		ldi r25,hi8(__c.2324)
+ 2363               	.LVL118:
+ 2364 0d20 0E94 0000 		call writeNStringP
+ 2365               	.LM401:
+ 2366 0d24 8981      		ldd r24,Y+1
+ 2367 0d26 9A81      		ldd r25,Y+2
+ 2368               	.LVL119:
+ 2369 0d28 6AE0      		ldi r22,lo8(10)
+ 2370 0d2a 0E94 0000 		call writeInteger
+ 2371               	.LM402:
+ 2372 0d2e 80E0      		ldi r24,lo8(__c.2326)
+ 2373 0d30 90E0      		ldi r25,hi8(__c.2326)
+ 2374 0d32 0E94 0000 		call writeNStringP
+ 2375               	.LM403:
+ 2376 0d36 8091 0000 		lds r24,currentFollowLineArrayValue
+ 2377 0d3a 90E0      		ldi r25,lo8(0)
+ 2378 0d3c 6AE0      		ldi r22,lo8(10)
+ 2379 0d3e 0E94 0000 		call writeInteger
+ 2380               	.LM404:
+ 2381 0d42 80E0      		ldi r24,lo8(__c.2328)
+ 2382 0d44 90E0      		ldi r25,hi8(__c.2328)
+ 2383 0d46 0E94 0000 		call writeNStringP
+ 2384               	.LM405:
+ 2385 0d4a 8981      		ldd r24,Y+1
+ 2386 0d4c 9A81      		ldd r25,Y+2
+ 2387 0d4e 8330      		cpi r24,3
+ 2388 0d50 9105      		cpc r25,__zero_reg__
+ 2389 0d52 01F0      		breq .L249
+ 2390               	.LVL120:
+ 2391 0d54 8430      		cpi r24,4
+ 2392 0d56 9105      		cpc r25,__zero_reg__
+ 2393 0d58 04F4      		brge .L253
+ 2394 0d5a 8130      		cpi r24,1
+ 2395 0d5c 9105      		cpc r25,__zero_reg__
+ 2396 0d5e 01F0      		breq .L247
+ 2397 0d60 0297      		sbiw r24,2
+ 2398 0d62 01F0      		breq .+2
+ 2399 0d64 00C0      		rjmp .L254
+ 2400 0d66 00C0      		rjmp .L257
+ 2401               	.L253:
+ 2402 0d68 8530      		cpi r24,5
+ 2403 0d6a 9105      		cpc r25,__zero_reg__
+ 2404 0d6c 01F4      		brne .+2
+ 2405 0d6e 00C0      		rjmp .L251
+ 2406 0d70 8530      		cpi r24,5
+ 2407 0d72 9105      		cpc r25,__zero_reg__
+ 2408 0d74 04F0      		brlt .L250
+ 2409 0d76 0697      		sbiw r24,6
+ 2410 0d78 01F0      		breq .+2
+ 2411 0d7a 00C0      		rjmp .L254
+ 2412 0d7c 00C0      		rjmp .L258
+ 2413               	.LVL121:
+ 2414               	.L246:
+ 2415               	.LM406:
+ 2416 0d7e 80E0      		ldi r24,lo8(__c.2330)
+ 2417 0d80 90E0      		ldi r25,hi8(__c.2330)
+ 2418               	.LVL122:
+ 2419 0d82 0E94 0000 		call writeNStringP
+ 2420               	.LM407:
+ 2421 0d86 C801      		movw r24,r16
+ 2422 0d88 6AE0      		ldi r22,lo8(10)
+ 2423 0d8a 0E94 0000 		call writeInteger
+ 2424               	.LM408:
+ 2425 0d8e 80E0      		ldi r24,lo8(__c.2332)
+ 2426 0d90 90E0      		ldi r25,hi8(__c.2332)
+ 2427 0d92 0E94 0000 		call writeNStringP
+ 2428               	.LM409:
+ 2429 0d96 8091 0000 		lds r24,currentFollowLineArrayValue
+ 2430 0d9a 90E0      		ldi r25,lo8(0)
+ 2431 0d9c 6AE0      		ldi r22,lo8(10)
+ 2432 0d9e 0E94 0000 		call writeInteger
+ 2433               	.LM410:
+ 2434 0da2 80E0      		ldi r24,lo8(__c.2334)
+ 2435 0da4 90E0      		ldi r25,hi8(__c.2334)
+ 2436 0da6 0E94 0000 		call writeNStringP
+ 2437 0daa 00C0      		rjmp .L254
+ 2438               	.LVL123:
+ 2439               	.L247:
+ 2440               	.LM411:
+ 2441 0dac 8091 0000 		lds r24,followLine+2
+ 2442               	.LVL124:
+ 2443 0db0 8C7F      		andi r24,lo8(-4)
+ 2444 0db2 8260      		ori r24,lo8(2)
+ 2445 0db4 00C0      		rjmp .L255
+ 2446               	.LVL125:
+ 2447               	.L257:
+ 2448               	.LM412:
+ 2449 0db6 1092 0000 		sts followLine,__zero_reg__
+ 2450 0dba 00C0      		rjmp .L254
+ 2451               	.L249:
+ 2452               	.LM413:
+ 2453 0dbc 1092 0000 		sts (stopwatches+1)+1,__zero_reg__
+ 2454 0dc0 1092 0000 		sts stopwatches+1,__zero_reg__
+ 2455               	.LM414:
+ 2456 0dc4 8091 0000 		lds r24,followLine
+ 2457               	.LVL126:
+ 2458 0dc8 8D50      		subi r24,lo8(-(-13))
+ 2459 0dca 8093 0000 		sts followLine,r24
+ 2460               	.LM415:
+ 2461 0dce 8091 0000 		lds r24,followLine+1
+ 2462 0dd2 835F      		subi r24,lo8(-(13))
+ 2463 0dd4 00C0      		rjmp .L256
+ 2464               	.LVL127:
+ 2465               	.L250:
+ 2466               	.LM416:
+ 2467 0dd6 1092 0000 		sts (stopwatches+1)+1,__zero_reg__
+ 2468 0dda 1092 0000 		sts stopwatches+1,__zero_reg__
+ 2469               	.LM417:
+ 2470 0dde 8091 0000 		lds r24,followLine
+ 2471               	.LVL128:
+ 2472 0de2 835F      		subi r24,lo8(-(13))
+ 2473 0de4 8093 0000 		sts followLine,r24
+ 2474               	.LM418:
+ 2475 0de8 8091 0000 		lds r24,followLine+1
+ 2476 0dec 8D50      		subi r24,lo8(-(-13))
+ 2477               	.L256:
+ 2478 0dee 8093 0000 		sts followLine+1,r24
+ 2479 0df2 00C0      		rjmp .L254
+ 2480               	.LVL129:
+ 2481               	.L251:
+ 2482               	.LM419:
+ 2483 0df4 1092 0000 		sts followLine+1,__zero_reg__
+ 2484 0df8 00C0      		rjmp .L254
+ 2485               	.L258:
+ 2486               	.LM420:
+ 2487 0dfa 8091 0000 		lds r24,followLine+2
+ 2488               	.LVL130:
+ 2489 0dfe 8360      		ori r24,lo8(3)
+ 2490               	.L255:
+ 2491 0e00 8093 0000 		sts followLine+2,r24
+ 2492               	.LVL131:
+ 2493               	.L254:
+ 2494               	/* epilogue start */
+ 2495               	.LBE60:
+ 2496               	.LM421:
+ 2497 0e04 0F90      		pop __tmp_reg__
+ 2498 0e06 0F90      		pop __tmp_reg__
+ 2499 0e08 CF91      		pop r28
+ 2500 0e0a DF91      		pop r29
+ 2501 0e0c 1F91      		pop r17
+ 2502 0e0e 0F91      		pop r16
+ 2503               	.LVL132:
+ 2504 0e10 0895      		ret
+ 2505               	.LFE31:
+ 2507               	.global	behaviourController
+ 2509               	behaviourController:
+ 2510               	.LFB35:
+ 2511               	.LM422:
+ 2512               	/* prologue: function */
+ 2513               	/* frame size = 0 */
+ 2514               	.LM423:
+ 2515 0e12 0E94 0000 		call behaviour_escape
+ 2516               	.LM424:
+ 2517 0e16 0E94 0000 		call behaviour_avoid
+ 2518               	.LM425:
+ 2519 0e1a 0E94 0000 		call behaviour_followLine
+ 2520               	.LM426:
+ 2521 0e1e 0E94 0000 		call behaviour_cruise
+ 2522               	.LM427:
+ 2523 0e22 8091 0000 		lds r24,escape+5
+ 2524 0e26 8823      		tst r24
+ 2525 0e28 01F0      		breq .L260
+ 2526               	.LM428:
+ 2527 0e2a 80E0      		ldi r24,lo8(escape)
+ 2528 0e2c 90E0      		ldi r25,hi8(escape)
+ 2529 0e2e 00C0      		rjmp .L267
+ 2530               	.L260:
+ 2531               	.LM429:
+ 2532 0e30 8091 0000 		lds r24,avoid+5
+ 2533 0e34 8823      		tst r24
+ 2534 0e36 01F0      		breq .L262
+ 2535               	.LM430:
+ 2536 0e38 80E0      		ldi r24,lo8(avoid)
+ 2537 0e3a 90E0      		ldi r25,hi8(avoid)
+ 2538 0e3c 00C0      		rjmp .L267
+ 2539               	.L262:
+ 2540               	.LM431:
+ 2541 0e3e 8091 0000 		lds r24,carryOutMission+5
+ 2542 0e42 8823      		tst r24
+ 2543 0e44 01F0      		breq .L263
+ 2544               	.LM432:
+ 2545 0e46 80E0      		ldi r24,lo8(carryOutMission)
+ 2546 0e48 90E0      		ldi r25,hi8(carryOutMission)
+ 2547 0e4a 00C0      		rjmp .L267
+ 2548               	.L263:
+ 2549               	.LM433:
+ 2550 0e4c 8091 0000 		lds r24,followLine+5
+ 2551 0e50 8823      		tst r24
+ 2552 0e52 01F0      		breq .L264
+ 2553               	.LM434:
+ 2554 0e54 80E0      		ldi r24,lo8(followLine)
+ 2555 0e56 90E0      		ldi r25,hi8(followLine)
+ 2556 0e58 00C0      		rjmp .L267
+ 2557               	.L264:
+ 2558               	.LM435:
+ 2559 0e5a 8091 0000 		lds r24,cruise+5
+ 2560 0e5e 8823      		tst r24
+ 2561 0e60 01F0      		breq .L265
+ 2562               	.LM436:
+ 2563 0e62 80E0      		ldi r24,lo8(cruise)
+ 2564 0e64 90E0      		ldi r25,hi8(cruise)
+ 2565 0e66 00C0      		rjmp .L267
+ 2566               	.L265:
+ 2567               	.LM437:
+ 2568 0e68 80E0      		ldi r24,lo8(STOP)
+ 2569 0e6a 90E0      		ldi r25,hi8(STOP)
+ 2570               	.L267:
+ 2571 0e6c 0E94 0000 		call moveCommand
+ 2572 0e70 0895      		ret
+ 2573               	.LFE35:
+ 2575               	.global	task_LineFollower
+ 2577               	task_LineFollower:
+ 2578               	.LFB32:
+ 2579               	.LM438:
+ 2580 0e72 DF93      		push r29
+ 2581 0e74 CF93      		push r28
+ 2582 0e76 00D0      		rcall .
+ 2583 0e78 CDB7      		in r28,__SP_L__
+ 2584 0e7a DEB7      		in r29,__SP_H__
+ 2585               	/* prologue: function */
+ 2586               	/* frame size = 2 */
+ 2587               	.LM439:
+ 2588 0e7c 8091 0000 		lds r24,stopwatches+3
+ 2589 0e80 9091 0000 		lds r25,(stopwatches+3)+1
+ 2590 0e84 8536      		cpi r24,101
+ 2591 0e86 9105      		cpc r25,__zero_reg__
+ 2592 0e88 00F0      		brlo .L271
+ 2593               	.LBB61:
+ 2594               	.LM440:
+ 2595 0e8a 8CE7      		ldi r24,lo8(124)
+ 2596 0e8c 60E1      		ldi r22,lo8(16)
+ 2597 0e8e AE01      		movw r20,r28
+ 2598 0e90 4F5F      		subi r20,lo8(-(1))
+ 2599 0e92 5F4F      		sbci r21,hi8(-(1))
+ 2600 0e94 22E0      		ldi r18,lo8(2)
+ 2601 0e96 0E94 0000 		call I2CTWI_readRegisters
+ 2602               	.LM441:
+ 2603 0e9a 9A81      		ldd r25,Y+2
+ 2604 0e9c 9093 0000 		sts currentFollowLineArrayValue,r25
+ 2605               	.LM442:
+ 2606 0ea0 8091 0000 		lds r24,lastFollowLineArrayValue
+ 2607 0ea4 9817      		cp r25,r24
+ 2608 0ea6 01F0      		breq .L270
+ 2609               	.LM443:
+ 2610 0ea8 80E0      		ldi r24,lo8(__c.2363)
+ 2611 0eaa 90E0      		ldi r25,hi8(__c.2363)
+ 2612 0eac 0E94 0000 		call writeNStringP
+ 2613               	.LM444:
+ 2614 0eb0 8091 0000 		lds r24,lastFollowLineArrayValue
+ 2615 0eb4 90E0      		ldi r25,lo8(0)
+ 2616 0eb6 6AE0      		ldi r22,lo8(10)
+ 2617 0eb8 0E94 0000 		call writeInteger
+ 2618               	.LM445:
+ 2619 0ebc 80E0      		ldi r24,lo8(__c.2365)
+ 2620 0ebe 90E0      		ldi r25,hi8(__c.2365)
+ 2621 0ec0 0E94 0000 		call writeNStringP
+ 2622               	.LM446:
+ 2623 0ec4 8091 0000 		lds r24,currentFollowLineArrayValue
+ 2624 0ec8 90E0      		ldi r25,lo8(0)
+ 2625 0eca 6AE0      		ldi r22,lo8(10)
+ 2626 0ecc 0E94 0000 		call writeInteger
+ 2627               	.LM447:
+ 2628 0ed0 8AE0      		ldi r24,lo8(10)
+ 2629 0ed2 0E94 0000 		call writeChar
+ 2630               	.L270:
+ 2631               	.LM448:
+ 2632 0ed6 8091 0000 		lds r24,currentFollowLineArrayValue
+ 2633 0eda 8093 0000 		sts lastFollowLineArrayValue,r24
+ 2634               	.LM449:
+ 2635 0ede 1092 0000 		sts (stopwatches+3)+1,__zero_reg__
+ 2636 0ee2 1092 0000 		sts stopwatches+3,__zero_reg__
+ 2637               	.L271:
+ 2638               	/* epilogue start */
+ 2639               	.LBE61:
+ 2640               	.LM450:
+ 2641 0ee6 0F90      		pop __tmp_reg__
+ 2642 0ee8 0F90      		pop __tmp_reg__
+ 2643 0eea CF91      		pop r28
+ 2644 0eec DF91      		pop r29
+ 2645 0eee 0895      		ret
+ 2646               	.LFE32:
+ 2648               	.global	main
+ 2650               	main:
+ 2651               	.LFB36:
+ 2652               	.LM451:
+ 2653               	/* prologue: function */
+ 2654               	/* frame size = 0 */
+ 2655               	.LM452:
+ 2656 0ef0 0E94 0000 		call initRobotBase
+ 2657               	.LM453:
+ 2658 0ef4 8FE3      		ldi r24,lo8(63)
+ 2659 0ef6 0E94 0000 		call setLEDs
+ 2660               	.LM454:
+ 2661 0efa 84EC      		ldi r24,lo8(2500)
+ 2662 0efc 99E0      		ldi r25,hi8(2500)
+ 2663 0efe 0E94 0000 		call mSleep
+ 2664               	.LM455:
+ 2665 0f02 84E2      		ldi r24,lo8(36)
+ 2666 0f04 0E94 0000 		call setLEDs
+ 2667               	.LM456:
+ 2668 0f08 80E0      		ldi r24,lo8(__c.2413)
+ 2669 0f0a 90E0      		ldi r25,hi8(__c.2413)
+ 2670 0f0c 0E94 0000 		call writeNStringP
+ 2671               	.LM457:
+ 2672 0f10 80E2      		ldi r24,lo8(32)
+ 2673 0f12 0E94 0000 		call __I2CTWI_initMaster
+ 2674               	.LM458:
+ 2675 0f16 80E0      		ldi r24,lo8(gs(bumpersStateChangedNew))
+ 2676 0f18 90E0      		ldi r25,hi8(gs(bumpersStateChangedNew))
+ 2677 0f1a 0E94 0000 		call BUMPERS_setStateChangedHandler
+ 2678               	.LM459:
+ 2679 0f1e 80E0      		ldi r24,lo8(gs(acsStateChangedNew))
+ 2680 0f20 90E0      		ldi r25,hi8(gs(acsStateChangedNew))
+ 2681 0f22 0E94 0000 		call ACS_setStateChangedHandler
+ 2682               	.LM460:
+ 2683 0f26 0E94 0000 		call powerON
+ 2684               	.LM461:
+ 2685 0f2a 0E94 0000 		call setACSPwrMed
+ 2686               	.LM462:
+ 2687 0f2e 8091 0000 		lds r24,stopwatches
+ 2688 0f32 8160      		ori r24,lo8(1)
+ 2689 0f34 8093 0000 		sts stopwatches,r24
+ 2690               	.LM463:
+ 2691 0f38 8091 0000 		lds r24,stopwatches
+ 2692 0f3c 8260      		ori r24,lo8(2)
+ 2693 0f3e 8093 0000 		sts stopwatches,r24
+ 2694               	.LM464:
+ 2695 0f42 80E0      		ldi r24,lo8(__c.2415)
+ 2696 0f44 90E0      		ldi r25,hi8(__c.2415)
+ 2697 0f46 0E94 0000 		call writeNStringP
+ 2698               	.L273:
+ 2699               	.LM465:
+ 2700 0f4a 0E94 0000 		call task_RP6System
+ 2701               	.LM466:
+ 2702 0f4e 0E94 0000 		call task_I2CTWI
+ 2703               	.LM467:
+ 2704 0f52 0E94 0000 		call task_LineFollower
+ 2705               	.LM468:
+ 2706 0f56 0E94 0000 		call behaviourController
+ 2707 0f5a 00C0      		rjmp .L273
+ 2708               	.LFE36:
+ 2710               	.global	acsStateChangedNew
+ 2712               	acsStateChangedNew:
+ 2713               	.LFB25:
+ 2714               	.LM469:
+ 2715               	/* prologue: function */
+ 2716               	/* frame size = 0 */
+ 2717               	.LM470:
+ 2718 0f5c 2091 0000 		lds r18,obstacle_left
+ 2719 0f60 2223      		tst r18
+ 2720 0f62 01F0      		breq .L276
+ 2721 0f64 8091 0000 		lds r24,obstacle_right
+ 2722 0f68 8823      		tst r24
+ 2723 0f6a 01F0      		breq .L276
+ 2724               	.LM471:
+ 2725 0f6c 84E2      		ldi r24,lo8(36)
+ 2726 0f6e 8093 0000 		sts statusLEDs,r24
+ 2727 0f72 00C0      		rjmp .L277
+ 2728               	.L276:
+ 2729               	.LM472:
+ 2730 0f74 1092 0000 		sts statusLEDs,__zero_reg__
+ 2731               	.L277:
+ 2732               	.LM473:
+ 2733 0f78 922F      		mov r25,r18
+ 2734 0f7a 9170      		andi r25,lo8(1)
+ 2735 0f7c 9295      		swap r25
+ 2736 0f7e 907F      		andi r25,lo8(-16)
+ 2737 0f80 8091 0000 		lds r24,statusLEDs
+ 2738 0f84 8F7E      		andi r24,lo8(-17)
+ 2739 0f86 892B      		or r24,r25
+ 2740 0f88 8093 0000 		sts statusLEDs,r24
+ 2741               	.LM474:
+ 2742 0f8c 30E0      		ldi r19,lo8(0)
+ 2743 0f8e 2223      		tst r18
+ 2744 0f90 01F4      		brne .L278
+ 2745 0f92 31E0      		ldi r19,lo8(1)
+ 2746               	.L278:
+ 2747 0f94 330F      		lsl r19
+ 2748 0f96 330F      		lsl r19
+ 2749 0f98 330F      		lsl r19
+ 2750 0f9a 8091 0000 		lds r24,statusLEDs
+ 2751 0f9e 857F      		andi r24,lo8(-11)
+ 2752               	.LM475:
+ 2753 0fa0 2091 0000 		lds r18,obstacle_right
+ 2754 0fa4 922F      		mov r25,r18
+ 2755 0fa6 9170      		andi r25,lo8(1)
+ 2756 0fa8 990F      		lsl r25
+ 2757 0faa 832B      		or r24,r19
+ 2758 0fac 892B      		or r24,r25
+ 2759 0fae 8093 0000 		sts statusLEDs,r24
+ 2760               	.LM476:
+ 2761 0fb2 90E0      		ldi r25,lo8(0)
+ 2762 0fb4 2223      		tst r18
+ 2763 0fb6 01F4      		brne .L279
+ 2764 0fb8 91E0      		ldi r25,lo8(1)
+ 2765               	.L279:
+ 2766 0fba 8091 0000 		lds r24,statusLEDs
+ 2767 0fbe 8E7F      		andi r24,lo8(-2)
+ 2768 0fc0 892B      		or r24,r25
+ 2769 0fc2 8093 0000 		sts statusLEDs,r24
+ 2770               	.LM477:
+ 2771 0fc6 0E94 0000 		call updateStatusLEDs
+ 2772               	.LM478:
+ 2773 0fca 8091 0000 		lds r24,stopwatches
+ 2774 0fce 8F7E      		andi r24,lo8(-17)
+ 2775 0fd0 8093 0000 		sts stopwatches,r24
+ 2776               	/* epilogue start */
+ 2777               	.LM479:
+ 2778 0fd4 0895      		ret
+ 2779               	.LFE25:
+ 2781               	.global	TWI_statusReg
+ 2782               	.global	TWI_statusReg
+ 2783               		.section .bss
+ 2786               	TWI_statusReg:
+ 2787 0000 00        		.skip 1,0
+ 2788               	.global	TWI_TWSR_state
+ 2789               	.global	TWI_TWSR_state
+ 2792               	TWI_TWSR_state:
+ 2793 0001 00        		.skip 1,0
+ 2794               	.global	I2CTWI_request_adr
+ 2795               	.global	I2CTWI_request_adr
+ 2798               	I2CTWI_request_adr:
+ 2799 0002 00        		.skip 1,0
+ 2800               	.global	I2CTWI_request_reg
+ 2801               	.global	I2CTWI_request_reg
+ 2804               	I2CTWI_request_reg:
+ 2805 0003 00        		.skip 1,0
+ 2806               	.global	I2CTWI_request_size
+ 2807               	.global	I2CTWI_request_size
+ 2810               	I2CTWI_request_size:
+ 2811 0004 00        		.skip 1,0
+ 2812               	.global	I2CTWI_requestID
+ 2813               	.global	I2CTWI_requestID
+ 2816               	I2CTWI_requestID:
+ 2817 0005 0000      		.skip 2,0
+ 2818               	.global	TWI_operation
+ 2819               	.global	TWI_operation
+ 2822               	TWI_operation:
+ 2823 0007 00        		.skip 1,0
+ 2824               	.global	lastFollowLineArrayValue
+ 2825               	.global	lastFollowLineArrayValue
+ 2828               	lastFollowLineArrayValue:
+ 2829 0008 00        		.skip 1,0
+ 2830               	.global	escape
+ 2831               	.global	escape
+ 2834               	escape:
+ 2835 0009 0000 0000 		.skip 6,0
+ 2835      0000 
+ 2836               	.global	STOP
+ 2837               	.global	STOP
+ 2840               	STOP:
+ 2841 000f 0000 0000 		.skip 6,0
+ 2841      0000 
+ 2842               	.global	avoid
+ 2843               	.global	avoid
+ 2846               	avoid:
+ 2847 0015 0000 0000 		.skip 6,0
+ 2847      0000 
+ 2848               	.global	kreuzungDetektiert
+ 2849               	.global	kreuzungDetektiert
+ 2852               	kreuzungDetektiert:
+ 2853 001b 00        		.skip 1,0
+ 2854               	.global	RechtsUndLinksAbbiegungErkannt
+ 2855               	.global	RechtsUndLinksAbbiegungErkannt
+ 2858               	RechtsUndLinksAbbiegungErkannt:
+ 2859 001c 00        		.skip 1,0
+ 2860               	.global	KreuzungsMitteErkannt
+ 2861               	.global	KreuzungsMitteErkannt
+ 2864               	KreuzungsMitteErkannt:
+ 2865 001d 00        		.skip 1,0
+ 2866               	.global	carryOutMission
+ 2867               	.global	carryOutMission
+ 2870               	carryOutMission:
+ 2871 001e 0000 0000 		.skip 6,0
+ 2871      0000 
+ 2872               	.global	followLine
+ 2873               	.global	followLine
+ 2876               	followLine:
+ 2877 0024 0000 0000 		.skip 6,0
+ 2877      0000 
+ 2878               	.global	currentFollowLineArrayValue
+ 2879               	.global	currentFollowLineArrayValue
+ 2882               	currentFollowLineArrayValue:
+ 2883 002a 00        		.skip 1,0
+ 2884               	.global	speed
+ 2885               		.data
+ 2888               	speed:
+ 2889 0000 28        		.byte	40
+ 2890               	.global	cruise
+ 2893               	cruise:
+ 2894 0001 28        		.byte	40
+ 2895 0002 28        		.byte	40
+ 2896 0003 00        		.byte	0
+ 2897 0004 0000      		.word	0
+ 2898 0006 28        		.byte	40
+ 2899               		.section	.progmem.data,"a",@progbits
+ 2902               	__c.2415:
+ 2903 0000 4575 726F 		.string	"EuroBotBot wird gestartet\n"
+ 2903      426F 7442 
+ 2903      6F74 2077 
+ 2903      6972 6420 
+ 2903      6765 7374 
+ 2906               	__c.2413:
+ 2907 001b 496E 6974 		.string	"Initialisierungen beginnen\n"
+ 2907      6961 6C69 
+ 2907      7369 6572 
+ 2907      756E 6765 
+ 2907      6E20 6265 
+ 2910               	__c.2378:
+ 2911 0037 5374 6172 		.string	"Start Cruise\n"
+ 2911      7420 4372 
+ 2911      7569 7365 
+ 2911      0A00 
+ 2914               	__c.2365:
+ 2915 0045 202D 3E20 		.string	" -> "
+ 2915      00
+ 2918               	__c.2363:
+ 2919 004a 4C69 6E69 		.string	"LinienWert: "
+ 2919      656E 5765 
+ 2919      7274 3A20 
+ 2919      00
+ 2922               	__c.2334:
+ 2923 0057 0A00      		.string	"\n"
+ 2926               	__c.2332:
+ 2927 0059 203A 2000 		.string	" : "
+ 2930               	__c.2330:
+ 2931 005d 446F 7070 		.string	"Doppellinie NICHT gefunden: "
+ 2931      656C 6C69 
+ 2931      6E69 6520 
+ 2931      4E49 4348 
+ 2931      5420 6765 
+ 2934               	__c.2328:
+ 2935 007a 0A00      		.string	"\n"
+ 2938               	__c.2326:
+ 2939 007c 203A 2000 		.string	" : "
+ 2942               	__c.2324:
+ 2943 0080 446F 7070 		.string	"Doppellinie gefunden: pos:"
+ 2943      656C 6C69 
+ 2943      6E69 6520 
+ 2943      6765 6675 
+ 2943      6E64 656E 
+ 2946               	__c.2253:
+ 2947 009b 332D 5765 		.string	"3-Wege-Kreuzung erkannt (Links + Geradeaus)\n"
+ 2947      6765 2D4B 
+ 2947      7265 757A 
+ 2947      756E 6720 
+ 2947      6572 6B61 
+ 2950               	__c.2251:
+ 2951 00c8 332D 5765 		.string	"3-Wege-Kreuzung erkannt (Rechts + Geradeaus)\n"
+ 2951      6765 2D4B 
+ 2951      7265 757A 
+ 2951      756E 6720 
+ 2951      6572 6B61 
+ 2954               	__c.2249:
+ 2955 00f6 5265 6368 		.string	"Rechts- und Linkskurve gefunden\n"
+ 2955      7473 2D20 
+ 2955      756E 6420 
+ 2955      4C69 6E6B 
+ 2955      736B 7572 
+ 2958               	__c.2247:
+ 2959 0117 5361 636B 		.string	"Sackgasse erkannt\n"
+ 2959      6761 7373 
+ 2959      6520 6572 
+ 2959      6B61 6E6E 
+ 2959      740A 00
+ 2962               	__c.2245:
+ 2963 012a 342D 5765 		.string	"4-Wege-Kreuzung erkannt\n"
+ 2963      6765 2D4B 
+ 2963      7265 757A 
+ 2963      756E 6720 
+ 2963      6572 6B61 
+ 2966               	__c.2243:
+ 2967 0143 332D 5765 		.string	"3-Wege-Kreuzung erkannt (Rechts + Geradeaus)\n"
+ 2967      6765 2D4B 
+ 2967      7265 757A 
+ 2967      756E 6720 
+ 2967      6572 6B61 
+ 2968               		.lcomm obstacle_counter.2178,1
+ 2969               		.data
+ 2972               	last_obstacle.2177:
+ 2973 0007 02        		.byte	2
+ 2974               		.lcomm bump_count.2144,1
+ 2975               		.lcomm TWI_bufPos.2103,1
+ 2978               	I2CTWI_requestedDataReadyHandler:
+ 2979 0008 0000      		.word	gs(I2CTWI_requestedDataReady_DUMMY)
+ 2982               	I2CTWI_transmissionErrorHandler:
+ 2983 000a 0000      		.word	gs(I2CTWI_transmissionError_DUMMY)
+ 2984               		.lcomm I2CTWI_buf,16
+ 2985               		.lcomm I2CTWI_recbuf,48
+ 2986               		.lcomm TWI_msgSize,1
+ 2987               		.comm statusLEDs,1,1
+ 2988               		.comm motion_status,1,1
+ 2989               		.comm timer,2,1
+ 3286               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 EuroBot.c
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2      *ABS*:0000003f __SREG__
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:3      *ABS*:0000003e __SP_H__
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:4      *ABS*:0000003d __SP_L__
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:5      *ABS*:00000034 __CCP__
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:18     .text:00000000 __I2CTWI_initMaster
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2786   .bss:00000000 TWI_statusReg
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:58     .text:0000001c I2CTWI_requestedDataReady_DUMMY
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:71     .text:0000001e I2CTWI_setRequestedDataReadyHandler
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2978   .data:00000008 I2CTWI_requestedDataReadyHandler
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:87     .text:00000028 I2CTWI_transmissionError_DUMMY
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:100    .text:0000002a I2CTWI_setTransmissionErrorHandler
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2982   .data:0000000a I2CTWI_transmissionErrorHandler
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:116    .text:00000034 I2CTWI_delay
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:148    .text:00000054 task_I2CTWI
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2822   .bss:00000007 TWI_operation
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2985   .bss:0000006e TWI_msgSize
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2798   .bss:00000002 I2CTWI_request_adr
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2975   .bss:0000002e I2CTWI_buf
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2804   .bss:00000003 I2CTWI_request_reg
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2810   .bss:00000004 I2CTWI_request_size
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2816   .bss:00000005 I2CTWI_requestID
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2792   .bss:00000001 TWI_TWSR_state
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:313    .text:00000148 I2CTWI_requestDataFromDevice
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:361    .text:00000186 I2CTWI_requestRegisterFromDevice
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:415    .text:000001ce I2CTWI_getReceivedData
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2984   .bss:0000003e I2CTWI_recbuf
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:457    .text:000001f8 I2CTWI_getState
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:475    .text:00000204 I2CTWI_readRegisters
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:556    .text:0000027a I2CTWI_readBytes
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:655    .text:00000304 I2CTWI_readByte
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:740    .text:00000378 I2CTWI_transmitByte
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:810    .text:000003ce I2CTWI_transmit2Bytes
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:886    .text:0000042e I2CTWI_transmit3Bytes
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:968    .text:00000498 I2CTWI_transmit4Bytes
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1057   .text:0000050a I2CTWI_transmitBytes
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1153   .text:00000584 __vector_19
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2974   .bss:0000002d TWI_bufPos.2103
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1292   .text:00000668 behaviour_escape
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2834   .bss:00000009 escape
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2968   .bss:0000002c bump_count.2144
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1517   .text:000007ee bumpersStateChangedNew
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1564   .text:0000082c behaviour_avoid
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2846   .bss:00000015 avoid
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2972   .data:00000007 last_obstacle.2177
+                             .bss:0000002b obstacle_counter.2178
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1773   .text:000009b2 resetVariables
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2852   .bss:0000001b kreuzungDetektiert
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2858   .bss:0000001c RechtsUndLinksAbbiegungErkannt
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2864   .bss:0000001d KreuzungsMitteErkannt
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2870   .bss:0000001e carryOutMission
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1793   .text:000009c4 behaviour_carryOutMission
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1805   .text:000009c6 entscheideWohinGefahrenWerdenSoll
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1887   .text:00000a4c searchForTwoLines
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2882   .bss:0000002a currentFollowLineArrayValue
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1964   .text:00000aaa behaviour_cruise
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2893   .data:00000001 cruise
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2910   .progmem.data:00000037 __c.2378
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2888   .data:00000000 speed
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:1997   .text:00000adc task_EvaluateMission
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2828   .bss:00000008 lastFollowLineArrayValue
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2966   .progmem.data:00000143 __c.2243
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2958   .progmem.data:00000117 __c.2247
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2954   .progmem.data:000000f6 __c.2249
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2950   .progmem.data:000000c8 __c.2251
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2946   .progmem.data:0000009b __c.2253
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2962   .progmem.data:0000012a __c.2245
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2215   .text:00000c42 moveCommand
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2310   .text:00000ccc behaviour_followLine
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2876   .bss:00000024 followLine
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2942   .progmem.data:00000080 __c.2324
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2938   .progmem.data:0000007c __c.2326
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2934   .progmem.data:0000007a __c.2328
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2930   .progmem.data:0000005d __c.2330
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2926   .progmem.data:00000059 __c.2332
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2922   .progmem.data:00000057 __c.2334
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2509   .text:00000e12 behaviourController
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2840   .bss:0000000f STOP
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2577   .text:00000e72 task_LineFollower
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2918   .progmem.data:0000004a __c.2363
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2914   .progmem.data:00000045 __c.2365
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2650   .text:00000ef0 main
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2906   .progmem.data:0000001b __c.2413
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2712   .text:00000f5c acsStateChangedNew
+C:\Users\robo.stu\AppData\Local\Temp/ccKENQl6.s:2902   .progmem.data:00000000 __c.2415
+                            *COM*:00000001 statusLEDs
+                            *COM*:00000001 motion_status
+                            *COM*:00000002 timer
+
+UNDEFINED SYMBOLS
+bumper_left
+bumper_right
+stopwatches
+obstacle_right
+obstacle_left
+writeNStringP
+rotate
+__floatunsisf
+__divsf3
+__fixunssfsi
+move
+changeDirection
+moveAtSpeed
+isMovementComplete
+writeInteger
+writeChar
+initRobotBase
+setLEDs
+mSleep
+BUMPERS_setStateChangedHandler
+ACS_setStateChangedHandler
+powerON
+setACSPwrMed
+task_RP6System
+updateStatusLEDs
+__do_copy_data
+__do_clear_bss
