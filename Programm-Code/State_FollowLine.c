@@ -32,6 +32,7 @@
 struct behaviour_command_t followLine = {0, 0, FWD, false, false, 0, IDLE};
 
 uint8_t currentFollowLineArrayValue = 0;
+int previousMitteZwischenDenLinien = -1;
 
 // The behaviour command data type:
 enum
@@ -107,11 +108,12 @@ void behaviour_followLine(void)
 		//	writeString_P("Line lost\n"); 
 		followLine.state = IDLE;
 	}
+	
+	int stateLines = nichtsGefunden;
+	int mitteZwischenDenLinien = -1;
 		
 	switch(followLine.state)
 	{
-		int stateLines = nichtsGefunden;
-		int mitteZwischenDenLinien = -1;
 		case IDLE: 
 		// Do nothing
 			;
@@ -127,19 +129,19 @@ void behaviour_followLine(void)
 			
 			if( stateLines == Linie_2_gefunden )
 			{
-				writeString_P("Doppellinie gefunden: pos:");
-				writeInteger(mitteZwischenDenLinien, DEC);
-				writeString_P(" : ");
-				writeInteger(currentFollowLineArrayValue, DEC);
-				writeString_P("\n");
+				if( previousMitteZwischenDenLinien != mitteZwischenDenLinien)
+				{
+					writeString_P("Wert: ");
+					writeInteger(currentFollowLineArrayValue, DEC);
+					writeString_P("   Doppellinie gefunden bei Position: ");
+					writeInteger(mitteZwischenDenLinien, DEC);
+					writeString_P("\n");
+				}
+				
+				previousMitteZwischenDenLinien = mitteZwischenDenLinien;
 			}
 			else
 			{
-				writeString_P("Doppellinie NICHT gefunden: ");
-				writeInteger(stateLines, DEC);
-				writeString_P(" : ");
-				writeInteger(currentFollowLineArrayValue, DEC);
-				writeString_P("\n");
 				return;
 			}
 			
@@ -154,13 +156,13 @@ void behaviour_followLine(void)
 				break;
 			
 			case 3:
-				setStopwatch1(0);	// Wird gestartet, weil innerhalb einer bestimmten Zeit Kreuzungen ausgewertet werden
+				setStopwatch1(0);	// Timer wird gestartet, um anzuzeigen, dass derzeit nicht der Mitte einer Doppellinie gefolgt wird
 				followLine.speed_left  -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				followLine.speed_right += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				break;
 			
 			case 4:
-				setStopwatch1(0);	// Wird gestartet, weil innerhalb einer bestimmten Zeit Kreuzungen ausgewertet werden
+				setStopwatch1(0);	// Timer wird gestartet, um anzuzeigen, dass derzeit nicht der Mitte einer Doppellinie gefolgt wird
 				followLine.speed_left  += FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				followLine.speed_right -= FOLLOW_LINE_SPEED_DIFFERENCE_DURING_ARC;
 				break;
@@ -190,6 +192,8 @@ void task_LineFollower(void)
 {
 	if(getStopwatch2() > LINE_FOLLOWER_READ_CYCLE_TIME_MS) 
 	{
+		setStopwatch2(0);	// Timer reinitialisieren
+		
 		// Der Empfang der Liniensensorwerte:
 		uint8_t results[2];
 		I2CTWI_readRegisters(LINE_FOLLOWER_ARRAY_ADR, REG_DATA_B, results, 2);
@@ -204,14 +208,11 @@ void task_LineFollower(void)
 			writeChar('\n');
 		}
 		
-		lastFollowLineArrayValue = currentFollowLineArrayValue;
-		
-		
 		// Um CarryOutMission zu aktivieren, muss die folgdende Codezeile einkommentiert werden:
 		
-		//task_EvaluateMission();	// Hier wird ermittelt, ob zur Missionserfüllung relevante Bewegungen durchgeführt werden müssen
+		task_EvaluateMission();	// Hier wird ermittelt, ob zur Missionserfüllung relevante Bewegungen durchgeführt werden müssen
 		
-		setStopwatch2(0);
+		lastFollowLineArrayValue = currentFollowLineArrayValue;
 	}
 }
 

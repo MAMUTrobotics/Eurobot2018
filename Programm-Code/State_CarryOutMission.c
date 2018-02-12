@@ -22,6 +22,8 @@
 // Some speed values for different movements:
 #define CARRY_OUT_MISSION_SPEED  ROBOT_DEFAULT_SPEED
 
+#define NUMBER_OF_DETECTIONS_UNTIL_CORNER_IS_VALID 5
+
 // Mögliche Aufgaben:
 #define CARRY_OUT_MISSION_FEED_THE_CITY_WITH_DRINKING_WATER		1
 #define CARRY_OUT_MISSION_BUILDING_HEQ_BUILDINGS				2
@@ -44,13 +46,18 @@
 #define RIGHT_ARC_180											4
 
 uint8_t kreuzungDetektiert = IDLE;
+uint8_t AbbiegungErkanntCounter = 0;
+uint8_t resetCounter = 0;
 uint8_t RechtsUndLinksAbbiegungErkannt = false;
 uint8_t KreuzungsMitteErkannt = false;
+
 
 struct behaviour_command_t carryOutMission = {0, 0, FWD, false, false, 0, IDLE};
 
 void resetVariables(void)
 {
+	resetCounter = 0;
+	AbbiegungErkanntCounter = 0;
 	kreuzungDetektiert = IDLE;
 	RechtsUndLinksAbbiegungErkannt = false;
 	KreuzungsMitteErkannt = false;
@@ -68,7 +75,7 @@ void behaviour_carryOutMission(void)
 /**
  * ........
  */
-void entscheideWohinGefahrenWerdenSoll(void)
+void entscheideWohinGefahrenWerdenSoll( void )
 {
 	// Im folgenden werden zu Testzwecken sinnlose default-Werte verwendet, dies muss noch angepasst werden
 	switch(kreuzungDetektiert)
@@ -118,16 +125,36 @@ void entscheideWohinGefahrenWerdenSoll(void)
 	}
 }
 
+
+
+uint8_t SackgasseGefunden( void )
+{
+	uint8_t bSackgasseGefunden = false;
+	
+	if(    lastFollowLineArrayValue & 0b00100000
+	    && lastFollowLineArrayValue & 0b00010000
+		&& lastFollowLineArrayValue & 0b00001000
+		&& lastFollowLineArrayValue & 0b00000100)	// Wurde eine Sackgasse detektiert?
+	{
+		bSackgasseGefunden = true;
+	}
+	
+	return bSackgasseGefunden;
+}
+
 /**
  * The following function is used to get the line sensor value and check if the value has
  * has changed.
  */
-void task_EvaluateMission(void)
+void task_EvaluateMission( void )
 {
-	if( getStopwatch1() > MAX_TIME_INTERVAL_FOR_CROSSROAD_EVALUATION)	// Wurde schon zu lange keiner Linie mehr gefolgt?
+	if( (getStopwatch1() > MAX_TIME_INTERVAL_FOR_CROSSROAD_EVALUATION) && ! SackgasseGefunden() )	// Wurde noch nicht lange genug einer Linie gefolgt?
 	{
-		resetVariables();
-		return;
+		if( RechtsUndLinksAbbiegungErkannt == false)
+		{
+			resetVariables();
+			return;
+		}
 	}
 	
 	if( kreuzungDetektiert != IDLE)	// Wurde bereits eine Kreuzung entdeckt?
@@ -149,6 +176,7 @@ void task_EvaluateMission(void)
 		        || lastFollowLineArrayValue & 0b00000100) == false ) 	// Wurde die Mitte einer T- bzw. Vierer-Kreuzung erkannt?
 			{
 				KreuzungsMitteErkannt = true;
+				writeString_P("Mitte einer Kreuzung erkannt\n");
 			}
 		}
 		else
@@ -157,13 +185,10 @@ void task_EvaluateMission(void)
 			// Es wurde zuvor die Mitte der Kreuzung erkannt.
 			// Nun wird geradeausgefahren, bis das hintere Ende der Wegmarkierungen erscheint.
 			
-			if( lastFollowLineArrayValue & 0b00100000
-			 && lastFollowLineArrayValue & 0b00010000
-			 && lastFollowLineArrayValue & 0b00001000
-		     && lastFollowLineArrayValue & 0b00000100) 	// Wurde das hintere Ende der T-Kreuzung erkannt?
+			if( SackgasseGefunden() ) 	// Wurde das hintere Ende der T-Kreuzung erkannt?
 			{
 				kreuzungDetektiert = DREI_WEGE_KREUZUNG_LINKS_RECHTS;
-				writeString_P("3-Wege-Kreuzung erkannt (Rechts + Geradeaus)\n"); 
+				writeString_P("3-Wege-Kreuzung erkannt (Links + Rechts)\n"); 
 			}
 			else if( (lastFollowLineArrayValue & 0b00100000 && lastFollowLineArrayValue & 0b00000100)
 				  && (lastFollowLineArrayValue & 0b00010000 || lastFollowLineArrayValue & 0b00001000) == false) 	// Wurde das hintere Ende der Vierwege-Kreuzung erkannt?
@@ -173,20 +198,19 @@ void task_EvaluateMission(void)
 		    }
 		}
 		
-		// Alle Variablen müssen noch initialisiert und zurückgesetzt werden
+		AbbiegungErkanntCounter = 0;
 	}
-	else if(    lastFollowLineArrayValue & 0b00100000
-	         && lastFollowLineArrayValue & 0b00010000
-		     && lastFollowLineArrayValue & 0b00001000
-		     && lastFollowLineArrayValue & 0b00000100)	// Wurde eine Sackgasse detektiert?
+	else if( SackgasseGefunden() )	// Wurde eine Sackgasse detektiert?
 	{
 		kreuzungDetektiert = SACKGASSE;
 		writeString_P("Sackgasse erkannt\n"); 
 	}
-	else if(    lastFollowLineArrayValue & 0b01000000
+	else if(    lastFollowLineArrayValue & 0b10000000
+			 && lastFollowLineArrayValue & 0b01000000
 		     && lastFollowLineArrayValue & 0b00100000
 		     && lastFollowLineArrayValue & 0b00000100
-		     && lastFollowLineArrayValue & 0b00000010)	// Wurde eine Rechts- und eine Linkskurve entdeckt?
+		     && lastFollowLineArrayValue & 0b00000010
+			 && lastFollowLineArrayValue & 0b00000001)	// Wurde eine Rechts- und eine Linkskurve entdeckt?
 	{
 		// Es kann sich sowohl um eine T-Kreuzung, als auch um eine Vier-Wege-Kreuzung handeln. Daher muss noch
 		// ein Stück gefahren werden, um eine dieser beiden Optionen auszuschließen
@@ -201,19 +225,45 @@ void task_EvaluateMission(void)
 			 && lastFollowLineArrayValue & 0b01000000
 			 && lastFollowLineArrayValue & 0b00100000 )	// Haben die äußeren drei rechten Liniensensoren angesprochen? 
 	{
-		kreuzungDetektiert = DREI_WEGE_KREUZUNG_RECHTS_GERADEAUS;
-		writeString_P("3-Wege-Kreuzung erkannt (Rechts + Geradeaus)\n"); 
+		if( AbbiegungErkanntCounter < NUMBER_OF_DETECTIONS_UNTIL_CORNER_IS_VALID)
+		{
+			AbbiegungErkanntCounter++;
+			writeString_P("3-Wege-Kreuzung ");
+			writeInteger(AbbiegungErkanntCounter, DEC);
+			writeString_P("-mal erkannt ????? (Rechts + Geradeaus)\n");
+		}
+		else
+		{
+			kreuzungDetektiert = DREI_WEGE_KREUZUNG_RECHTS_GERADEAUS;
+			writeString_P("3-Wege-Kreuzung erkannt (Rechts + Geradeaus)\n");
+		}
 	}
 	else if(    lastFollowLineArrayValue & 0b00000001
 	         && lastFollowLineArrayValue & 0b00000010
 		     && lastFollowLineArrayValue & 0b00000100 )	// Haben die äußeren drei linken Liniensensoren angesprochen? 
 	{
-		kreuzungDetektiert = DREI_WEGE_KREUZUNG_LINKS_GERADEAUS;
-		writeString_P("3-Wege-Kreuzung erkannt (Links + Geradeaus)\n"); 
+		if( AbbiegungErkanntCounter < NUMBER_OF_DETECTIONS_UNTIL_CORNER_IS_VALID)
+		{
+			AbbiegungErkanntCounter++;
+			writeString_P("3-Wege-Kreuzung ");
+			writeInteger(AbbiegungErkanntCounter, DEC);
+			writeString_P("-mal erkannt ????? (Links + Geradeaus)\n");
+		}
+		else
+		{
+			kreuzungDetektiert = DREI_WEGE_KREUZUNG_LINKS_GERADEAUS;
+			writeString_P("3-Wege-Kreuzung erkannt (Links + Geradeaus)\n");
+		} 
 	}
 	else
 	{
-		resetVariables();	// Falls nichts sinnvolles erkannt wurde, soll nichts getan werden
+		//writeString_P(".\n");
+		resetCounter++;
+		if( resetCounter > 10)
+		{
+			resetVariables();	// Falls nichts sinnvolles erkannt wurde, soll nichts getan werden
+			writeString_P("Reset Kreuzungserkennung...\n");
+		}
 	}
 	
 	if( kreuzungDetektiert != IDLE)	// Wurde eine Kreuzung entdeckt?

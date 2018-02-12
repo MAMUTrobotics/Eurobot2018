@@ -13,13 +13,20 @@
 #include "RP6RobotBaseLib.h"
 #include "RP6I2CmasterTWI.c"     // Include the I2C-Bus Slave Library
 
+#include "Navigation.h"
+#include "Mission.h"
+
 #include "State_Escape.c"
 #include "State_Avoid.c"
 #include "State_CarryOutMission.c"
 #include "State_FollowLine.c"
 #include "State_Cruise.c"
 
-
+extern struct Spielfeld feld;
+extern struct SpielMissionen Spiel;
+extern int Spielfarbe;
+extern uint8_t aktuelleAusrichtung;
+bool initSpielfeld( struct Spielfeld *feldTemp);
 /*****************************************************************************/
 // Move command:
 
@@ -113,12 +120,28 @@ int main(void)
 	powerON(); // Turn on Encoders, Current sensing, ACS and Power LED.
 	
 	// Activates the Anti-Collision-System. The range can vary by using setACSPwrLow(), setACSPwrMed() or setACSPwrHigh()
-	setACSPwrMed();
+	setACSPwrLow();
 	
 	startStopwatch1();	// Wird in task_EvaluateMission() verwendet
 	startStopwatch2(); 	// Wird in task_LineFollower() verwendet
 	
 	writeString_P("EuroBotBot wird gestartet\n");
+	
+	// Navigations- und Missionsinitialisierungen
+	initSpielfeld(&feld);
+	initSpielMissionen(&Spiel);
+
+	if (Spielfarbe == GRUEN)
+	{
+		feld.AktuelleKreuzung = &feld.k_h;
+		aktuelleAusrichtung = OST;
+	}
+	else
+	{
+		feld.AktuelleKreuzung = &feld.k_q;
+		aktuelleAusrichtung = WEST;
+	}
+
 	
 	// Main loop
 	while(true) 
@@ -129,6 +152,8 @@ int main(void)
 		task_LineFollower();	// Implementiert in State_FollowLine.c, es wird hier task_EvaluateMission() aufgerufen
 		
 		behaviourController();  // Hier wird das aktuelle Verhalten des Roboters evaluiert
+		
+		//CarryOutMission();	// Missionsplanung
 	}
 	return 0;
 }

@@ -12,9 +12,9 @@
 /*****************************************************************************/
 // Konstanten:
 
-#define ROBOT_DEFAULT_SPEED		40	// Dieser Wert beeinflusst die Fahrtgeschwindigkeit bei allen Verhaltensweisen des Roboters
-#define DEFAULT_EVALUATION_CYCLE_TIME_MS 100 	// Wird in task_LineFollower() verwendet
-#define MAX_TIME_INTERVAL_FOR_CROSSROAD_EVALUATION	1000	// Innerhalb dieser Zeit in ms muss eine Kreuzung evaluiert werden können
+#define ROBOT_DEFAULT_SPEED		35	// Dieser Wert beeinflusst die Fahrtgeschwindigkeit bei allen Verhaltensweisen des Roboters
+#define DEFAULT_EVALUATION_CYCLE_TIME_MS 60 	// Wird in task_LineFollower() verwendet
+#define MAX_TIME_INTERVAL_FOR_CROSSROAD_EVALUATION	1100	// Innerhalb dieser Zeit in ms muss eine Kreuzung evaluiert werden können
 
 /*****************************************************************************/
 // Variablen:
