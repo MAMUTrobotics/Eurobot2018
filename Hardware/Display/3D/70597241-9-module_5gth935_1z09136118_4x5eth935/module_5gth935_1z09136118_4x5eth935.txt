@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-31052016-064422";"";
+"REFERENCE";"5GTH935+1Z09136118+4x5ETH935";"";
+"TraceParts.PartTitle";"Multimec Cap for a control unit - controlmec 5E/5G + 1Z";"";
+"TraceParts.InstanceId";"10-31052016-064422ETEHLME269IU6PLDKLNAJUMSM";"";
+"DESIGN";"5G switch, through-hole mounting, 3,5N, black 1Z cap, pad printed, with legend on the edges, legend in the centre: OK, + 4 x 5E switches, through-hole mounting, 3,5N";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"MEC";"";
+"TraceParts.PartVersion";"1.0.6";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"MEC:/F_MEC/10-31052016-064422";"";
