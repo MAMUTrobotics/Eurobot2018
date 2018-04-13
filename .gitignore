@@ -1,1 +1,8 @@
 *.lck
+*.d
+*.o
+*.mk
+*.map
+*.srec
+*.lss
+*.elf
