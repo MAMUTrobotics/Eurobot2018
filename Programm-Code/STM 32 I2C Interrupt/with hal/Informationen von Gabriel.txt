@@ -1,0 +1,3 @@
+
+Github:
+	https://github.com/fboris/STM32Cube_FW_F4/tree/master/Projects/STM32F4-Discovery/Examples/I2C/I2C_TwoBoards_ComIT

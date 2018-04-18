@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\Project.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\IHM12A1_ExampleFor2BiDirMotors\EWARM\STM32F030R8-Nucleo\Project.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+
