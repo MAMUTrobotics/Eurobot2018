@@ -49,7 +49,14 @@ entprellen::entprellen(volatile uint8_t *pin, uint8_t bit):p(pin),b(bit){
 	reg++;				//Pointer von Pin auf DDR verschieben
 	*reg &= ~(1 << bit);//Pin als Eingang einstellen
 	reg++;				//Pointer von DDR auf Port verschieben
-	*reg |= (1 << bit);	//Pull-up aktivieren
+	*reg |= (1 << bit);	//Pull-up aktivieren	
+	if((*p & (1 << b)) == 0){
+		counter = 0;
+		state = 0;
+	}else if((*p & (1 << b)) != 0){
+		counter = 5;
+		state = 1;
+	}
 	changed_ = 0;
 }
 	

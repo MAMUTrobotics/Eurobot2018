@@ -18,17 +18,23 @@ char test4_ee EEMEM;
 
 var anzeige_counter(v_bool);
 
+// -------------------------16-Bit Register Definition----------------------
 uint16_t var_u_int[1];	//Count U_INT
-int16_t var_s_int[2];	//Count INT
 var test5(v_u_int);
+
+int16_t var_s_int[2];	//Count INT
 var test6(v_s_int);
 var punkte(v_s_int);
+int16_t punkte_ee EEMEM;
+
+// -------------------------16-Bit Register Initialisierung-----------------
 void init_vars(){
 	//U_INT
 	test5.value = 0;
 	//INT
 	test6.value = 0;
-	punkte.value = 1;
+	#define punkte_array_num 1
+	punkte.value = punkte_array_num;
 }
 
 int16_t get_i(var val){
@@ -46,22 +52,28 @@ const Menu::Item_t *active_menu_item;
 
 var Start(v_bool_ro);
 
+// -------------------------EEPROM-Mapping----------------------------------
 void load_ee(){
 	test1.value = eeprom_read_byte ((uint8_t*)&test1_ee);
 	test2.value = eeprom_read_byte ((uint8_t*)&test2_ee);
 	test3.value = eeprom_read_byte ((uint8_t*)&test3_ee);
 	test4.value = eeprom_read_byte ((uint8_t*)&test4_ee);
+	var_s_int[punkte_array_num] = eeprom_read_word((uint16_t*)&punkte_ee);
+
 }
 void save_ee(){
 	eeprom_update_byte((uint8_t*)&test1_ee, test1.value);
 	eeprom_update_byte((uint8_t*)&test2_ee, test2.value);
 	eeprom_update_byte((uint8_t*)&test3_ee, test3.value);
 	eeprom_update_byte((uint8_t*)&test4_ee, test4.value);
+	eeprom_update_word((uint16_t*)&punkte_ee, (uint16_t)var_s_int[punkte_array_num]);
 }
 // ----------------------------------------------------------------------------
 Menu::Engine *engine;
 bool updateMenu = false;
 // ----------------------------------------------------------------------------
+
+// -------------------------I2C-Register-Mapping-------------------------------
 void init_pointer(){
 	txbuffer[0] = (volatile uint8_t *)&stunden;
 	txbuffer[1] = (volatile uint8_t *)&minuten;
@@ -254,9 +266,6 @@ MenuItem(miTest6,		"Backlight",	miTest7,		miTestcounter,	miExit,			Menu::NullIte
 MenuItem(miTest7,		"Team-color",	miTest8,		miTest6,		miExit,			Menu::NullItem,	menuEdit,	&test4);
 MenuItem(miTest8,		"Exit",			miTest9,		miTest7,		miExit,			Menu::NullItem,	menuExit2,	NULL);
 MenuItem(miTest9,		"Save",			Menu::NullItem,	miTest8,		miExit,			Menu::NullItem,	menuSave,	NULL);
-//MenuItem(miTest6,		"Test 6 Menu",	miTest7,		miTest5,		miExit,			Menu::NullItem,	menuDummy,	NULL);
-//MenuItem(miTest7,		"Test 7 Menu",	miTest8,		miTest6,		miExit,			Menu::NullItem,	menuDummy,	NULL);
-//MenuItem(miTest8,		"Test 8 Menu",	Menu::NullItem,	miTest7,		miExit,			Menu::NullItem,	menuDummy,	NULL);
 
 // ----------------------------------------------------------------------------
 
@@ -473,21 +482,6 @@ int main(void) {
 					active_menu_item == &miChBack1	)
 						updateMenu = true;
 				if (systemState == State::Default) {
-					//fprintf(uart_file_stream(),"test %i\n",counter_s);					
-					//cursor_x = 0;
-					//cursor_y = 2;
-					//printf("%02i Stunden",stunden);
-					//cursor_x = 0;
-					//cursor_y = 3;
-					//printf("%02i Minuten",minuten);
-					//cursor_x = 0;
-					//cursor_y = 4;
-					//printf("%02i Sekunden",sekunden);
-					//cursor_x = 0;
-					//cursor_y = 5;
-					////printf(" %p", &test_num);
-					////sprintf(text_buffer,"test %i\n",counter_s);
-					////drawstring(buffer, 0, 0, (uint8_t *)text_buffer);
 
 					if(anzeige_counter.value){
 						static char dir = 0;
